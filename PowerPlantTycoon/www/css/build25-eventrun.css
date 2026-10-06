@@ -1,0 +1,323 @@
+/* GRIDLINE EMPIRE 1.1 - WEEKLY EVENT RUN */
+
+#ge25EventRunRoot{
+  padding-bottom:34px;
+}
+
+.ge25er-hero{
+  padding:18px;
+  border:1px solid rgba(89,214,255,.28);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 85% 0%,
+      rgba(45,112,255,.18),
+      transparent 42%),
+    linear-gradient(145deg,
+      rgba(5,28,42,.98),
+      rgba(6,18,38,.98));
+}
+
+.ge25er-kicker,
+.ge25er-section-title small,
+.ge25er-livehead small,
+.ge25er-resources small{
+  font-size:8px;
+  letter-spacing:1.5px;
+  font-weight:900;
+  color:#f4d35e;
+}
+
+.ge25er-hero h1{
+  margin:7px 0 5px;
+  font-size:25px;
+  line-height:1.05;
+  color:#fff;
+}
+
+.ge25er-hero p,
+.ge25er-section-copy,
+.ge25er-hint{
+  color:#8fa7b6;
+  font-size:11px;
+  line-height:1.45;
+}
+
+.ge25er-topstats,
+.ge25er-resources{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+  margin-top:14px;
+}
+
+.ge25er-topstats>div,
+.ge25er-resources>div{
+  padding:10px 7px;
+  border-radius:11px;
+  border:1px solid rgba(87,178,214,.18);
+  background:rgba(1,12,22,.68);
+}
+
+.ge25er-topstats small,
+.ge25er-resources small{
+  display:block;
+  margin-bottom:4px;
+  font-size:6px;
+  color:#7996a8;
+}
+
+.ge25er-topstats b,
+.ge25er-resources b{
+  color:#fff;
+  font-size:12px;
+}
+
+.ge25er-control,
+.ge25er-section{
+  margin-top:12px;
+  padding:14px;
+  border:1px solid rgba(74,196,226,.24);
+  border-radius:18px;
+  background:rgba(2,18,27,.92);
+}
+
+.ge25er-livehead,
+.ge25er-section-title,
+.ge25er-plant-top,
+.ge25er-task-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.ge25er-livehead>div:last-child{
+  text-align:right;
+}
+
+.ge25er-livehead strong{
+  display:block;
+  margin-top:3px;
+  color:#67e3a4;
+  font-size:12px;
+}
+
+.ge25er-generate,
+.ge25er-sell{
+  width:100%;
+  margin-top:9px;
+  padding:13px 8px;
+  border:0;
+  border-radius:11px;
+  font-size:12px;
+  font-weight:950;
+}
+
+.ge25er-generate{
+  color:#111;
+  background:
+    linear-gradient(180deg,#ffd95d,#e8ad25);
+}
+
+.ge25er-sell{
+  color:white;
+  background:
+    linear-gradient(180deg,#42d977,#18a953);
+}
+
+.ge25er-hint{
+  margin:9px 3px 0;
+  text-align:center;
+  font-size:9px;
+}
+
+.ge25er-section-title h2{
+  margin:2px 0 0;
+  color:white;
+  font-size:16px;
+}
+
+.ge25er-section-title>b{
+  color:#f4d35e;
+  font-size:9px;
+}
+
+.ge25er-plants,
+.ge25er-tasks,
+.ge25er-rewards{
+  display:grid;
+  gap:8px;
+  margin-top:12px;
+}
+
+.ge25er-plant{
+  padding:11px;
+  border:1px solid rgba(87,178,214,.18);
+  border-radius:12px;
+  background:rgba(2,13,21,.75);
+}
+
+.ge25er-plant.locked{
+  opacity:.72;
+}
+
+.ge25er-plant small,
+.ge25er-plant span,
+.ge25er-task small,
+.ge25er-task span,
+.ge25er-reward-copy span,
+.ge25er-reward-copy small{
+  display:block;
+  color:#7893a4;
+  font-size:8px;
+}
+
+.ge25er-plant strong{
+  display:block;
+  margin:3px 0;
+  color:white;
+  font-size:12px;
+}
+
+.ge25er-plant-top>b{
+  color:#60dfa1;
+  font-size:7px;
+  letter-spacing:1px;
+}
+
+.ge25er-plant button{
+  width:100%;
+  margin-top:9px;
+  padding:9px;
+  border:1px solid rgba(244,211,94,.38);
+  border-radius:9px;
+  background:rgba(244,211,94,.08);
+  color:#f4d35e;
+  font-size:9px;
+  font-weight:900;
+}
+
+.ge25er-levelbar,
+.ge25er-task-progress{
+  height:5px;
+  margin-top:9px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#06131c;
+}
+
+.ge25er-levelbar i,
+.ge25er-task-progress i{
+  display:block;
+  height:100%;
+  border-radius:inherit;
+  background:
+    linear-gradient(90deg,#46d8ff,#60dfa1,#f4d35e);
+}
+
+.ge25er-task{
+  padding:11px;
+  border-left:3px solid #244758;
+  border-radius:10px;
+  background:rgba(3,15,23,.7);
+}
+
+.ge25er-task.done{
+  border-left-color:#60dfa1;
+}
+
+.ge25er-task strong{
+  color:white;
+  font-size:11px;
+}
+
+.ge25er-task-head>b{
+  color:#f4d35e;
+  font-size:9px;
+}
+
+.ge25er-task>span{
+  margin-top:5px;
+  text-align:right;
+}
+
+.ge25er-reward{
+  display:grid;
+  grid-template-columns:34px 1fr auto;
+  align-items:center;
+  gap:8px;
+  padding:10px;
+  border-radius:12px;
+  border:1px solid rgba(74,196,226,.16);
+  background:rgba(2,14,22,.72);
+}
+
+.ge25er-reward.ready{
+  border-color:rgba(244,211,94,.55);
+  box-shadow:0 0 16px rgba(244,211,94,.08);
+}
+
+.ge25er-reward.claimed{
+  border-color:rgba(96,223,161,.35);
+}
+
+.ge25er-reward-node{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  border:1px solid rgba(74,196,226,.35);
+  background:#071923;
+  color:#f4d35e;
+  font-weight:950;
+}
+
+.ge25er-reward.ready .ge25er-reward-node{
+  animation:ge25RewardPulse 1.4s ease-in-out infinite;
+}
+
+.ge25er-reward.claimed .ge25er-reward-node{
+  color:#60dfa1;
+}
+
+.ge25er-reward-copy strong{
+  color:white;
+  font-size:10px;
+}
+
+.ge25er-reward-copy span{
+  margin-top:2px;
+  color:#9db2c0;
+}
+
+.ge25er-reward-copy small{
+  margin-top:3px;
+}
+
+.ge25er-reward button{
+  padding:8px;
+  border:0;
+  border-radius:8px;
+  background:#f4d35e;
+  color:#111;
+  font-size:8px;
+  font-weight:950;
+}
+
+.ge25er-reward button:disabled{
+  background:#10232d;
+  color:#627682;
+}
+
+@keyframes ge25RewardPulse{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 0 0 rgba(244,211,94,0);
+  }
+
+  50%{
+    transform:scale(1.06);
+    box-shadow:0 0 16px rgba(244,211,94,.22);
+  }
+}

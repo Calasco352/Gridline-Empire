@@ -1,0 +1,74 @@
+/* BUILD 25 - MAIN GRID INCIDENTS */
+
+#ge25GridIncidentHost{
+    margin-top:7px;
+}
+
+.ge25-incident-live{
+    padding:9px;
+    border:1px solid rgba(255,190,80,.30);
+    border-radius:9px;
+    background:rgba(21,15,4,.72);
+}
+
+.ge25-incident-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:8px;
+}
+
+.ge25-incident-head small{
+    display:block;
+    font-size:6px;
+    letter-spacing:.7px;
+    opacity:.65;
+}
+
+.ge25-incident-head strong{
+    display:block;
+    margin-top:2px;
+    font-size:9px;
+    letter-spacing:.25px;
+}
+
+.ge25-incident-head span{
+    padding:3px 6px;
+    border:1px solid rgba(255,210,100,.24);
+    border-radius:999px;
+    font-size:6px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.ge25-incident-live p{
+    margin:7px 0;
+    font-size:8px;
+    line-height:1.4;
+    opacity:.78;
+}
+
+.ge25-incident-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:5px;
+}
+
+.ge25-incident-actions button{
+    min-height:30px;
+    border-radius:7px;
+    font-size:7px;
+    font-weight:800;
+    letter-spacing:.25px;
+}
+
+.ge25-incident-result{
+    padding:8px;
+    border:1px solid rgba(100,225,170,.22);
+    border-radius:8px;
+    background:rgba(4,24,18,.72);
+    text-align:center;
+    font-size:7px;
+    font-weight:700;
+    line-height:1.4;
+}

@@ -1,0 +1,411 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "2C66593B",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6809250885",
+      "localizations" : [
+        {
+          "description" : "Automatically generates power for your plant",
+          "displayName" : "Auto Generate",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.autogenerate",
+      "referenceName" : "Auto Generate",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6811071986",
+      "localizations" : [
+        {
+          "description" : "Unlocks Auto Sell with three selling modes.",
+          "displayName" : "Auto Sell License",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.autosell",
+      "referenceName" : "Auto Sell License",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6809253372",
+      "localizations" : [
+        {
+          "description" : "Instantly adds a cash boost to your power company",
+          "displayName" : "Capital Injection",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.capitalinjection",
+      "referenceName" : "Capital Injection",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6810796170",
+      "localizations" : [
+        {
+          "description" : "Temporary plant repair and output support.",
+          "displayName" : "Emergency Engineering Team",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.emergencyengineering",
+      "referenceName" : "Emergecy Engineering Team",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "6.99",
+      "familyShareable" : false,
+      "internalID" : "6809253058",
+      "localizations" : [
+        {
+          "description" : "Unlocks premium executive benefits for your company.",
+          "displayName" : "Executive License",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.executivelicense",
+      "referenceName" : "Executive License",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6811072125",
+      "localizations" : [
+        {
+          "description" : "Permanent bonuses for output and progression.",
+          "displayName" : "Founder’s Energy Bundle",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.foundersbundle",
+      "referenceName" : "Founder's Energy Bundle",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6811071342",
+      "localizations" : [
+        {
+          "description" : "Adds reserve resources for grid operations.",
+          "displayName" : "Grid Reserve Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.gridreserve",
+      "referenceName" : "Grid Reserve Pack",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6810795120",
+      "localizations" : [
+        {
+          "description" : "Unlocks the Executive HQ visual theme.",
+          "displayName" : "HQ Executive Theme",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.hqexecutivetheme",
+      "referenceName" : "HQ Executive Theme",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6809253361",
+      "localizations" : [
+        {
+          "description" : "Provides maintenance resources for your power plants",
+          "displayName" : "Maintenance Crate",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.maintenancecrate",
+      "referenceName" : "Maintenance Crate",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6810795770",
+      "localizations" : [
+        {
+          "description" : "Temporarily improves power sale quality.",
+          "displayName" : "Market Intelligence Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.marketintelligence",
+      "referenceName" : "Market Intelligence Pack",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6810795560",
+      "localizations" : [
+        {
+          "description" : "Improves eligible offline production.",
+          "displayName" : "Offline Operations License",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.offlineoperations",
+      "referenceName" : "Offline Operations License",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6810805972",
+      "localizations" : [
+        {
+          "description" : "Temporarily speeds up research progression.",
+          "displayName" : "R&D Accelerator",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.rdaccelerator",
+      "referenceName" : "R&D Accelerator",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6811070896",
+      "localizations" : [
+        {
+          "description" : "Boosts staffing and recruitment progression.",
+          "displayName" : "Recruitment Drive",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.recruitmentdrive",
+      "referenceName" : "Recruitment Drive",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6811071498",
+      "localizations" : [
+        {
+          "description" : "Supports regional expansion and company growth.",
+          "displayName" : "Regional Expansion Fund",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.regionalexpansion",
+      "referenceName" : "Regional Expansion Fund",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6809166345",
+      "localizations" : [
+        {
+          "description" : "Permanently removes forced ads.",
+          "displayName" : "Remove Ads",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.removeads",
+      "referenceName" : "Remove Ads",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6809253287",
+      "localizations" : [
+        {
+          "description" : "Boosts grid performance with extra power resources",
+          "displayName" : "Turbo Grid Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.calascointeractive.gridlineempire.turbogrid",
+      "referenceName" : "Turbo Grid Pack",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6809161844",
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_developerTeamID" : "Y9FGGL7R64",
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 810994350.18519294,
+    "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "22380378",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "Executive Grid VIP",
+          "locale" : "en_US"
+        }
+      ],
+      "name" : "Executive Grid VIP",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "billingPlans" : [
+            {
+              "billingPlanType" : "BILLED_UPFRONT",
+              "commitmentDisplayPrice" : "4.99",
+              "displayPrice" : "4.99",
+              "internalID" : "6811462938_BILLED_UPFRONT",
+              "isEnabled" : true
+            }
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6811462938",
+          "introductoryOffers" : [
+
+          ],
+          "localizations" : [
+            {
+              "description" : "VIP rewards, bonuses, cosmetics, and ad-free play",
+              "displayName" : "Executive Grid VIP",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.calascointeractive.powerplanttycoon.vip.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Executive Grid VIP Monthly",
+          "subscriptionGroupID" : "22380378",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "billingPlans" : [
+            {
+              "billingPlanType" : "BILLED_UPFRONT",
+              "commitmentDisplayPrice" : "4.99",
+              "displayPrice" : "4.99",
+              "internalID" : "6811583414_BILLED_UPFRONT",
+              "isEnabled" : true
+            }
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "6811583414",
+          "introductoryOffers" : [
+
+          ],
+          "localizations" : [
+            {
+              "description" : "VIP rewards, bonuses, cosmetics, and ad-free play",
+              "displayName" : "Executive Grid VIP",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.calascointeractive.gridlineempire.vip.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Executive Grid VIP Monthly V2",
+          "subscriptionGroupID" : "22380378",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "billingPlans" : [
+            {
+              "billingPlanType" : "BILLED_UPFRONT",
+              "commitmentDisplayPrice" : "39.99",
+              "displayPrice" : "39.99",
+              "internalID" : "6811463573_BILLED_UPFRONT",
+              "isEnabled" : true
+            }
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6811463573",
+          "introductoryOffers" : [
+
+          ],
+          "localizations" : [
+            {
+              "description" : "VIP rewards, bonuses, cosmetics, and ad-free play",
+              "displayName" : "Executive Grid VIP",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.calascointeractive.gridlineempire.vip.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Executive Grid VIP Yearly",
+          "subscriptionGroupID" : "22380378",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 5,
+    "minor" : 0
+  }
+}

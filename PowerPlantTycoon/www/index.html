@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#07111b">
+<title>Gridline Empire</title>
+<link rel="stylesheet" href="css/game.css?v=plants-art-v2"><!-- PPT BUILD 7 SIMPLIFIED -->
+<link rel="stylesheet" href="css/build7-simplified.css?v=2">
+<link rel="stylesheet" href="css/build13-executive-theme.css?v=13">
+<link rel="stylesheet" href="css/build13-vip-rankings.css?v=13.7">
+  <link rel="stylesheet" href="css/build25-expansion.css?v=28.2">
+  <link rel="stylesheet" href="css/build25-eventrun-v2.css?v=28.2">
+  <link rel="stylesheet" href="css/build25-operating-modes.css?v=25.1">
+  <link rel="stylesheet" href="css/build25-grid-reactions.css?v=25.1">
+  <link rel="stylesheet" href="css/build25-grid-incidents.css?v=25.1">
+  <link rel="stylesheet" href="css/build25-cinematic-plant.css?v=25.1">
+</head>
+<body>
+<!-- PPT BUILD 8 RC4 -->
+<!-- PPT BUILD 6 ECONOMY V5 -->
+<!-- PPT BUILD 6 FINAL SYSTEMS -->
+<!-- PPT BUILD 4 CINEMATIC -->
+<!-- PPT BUILD 4 TOP HUD FIX HTML -->
+<div id="bootSplashPremium">
+  <div class="boot-card">
+    <h1>GRIDLINE <span>EMPIRE</span></h1>
+    <p>PREMIUM ASSET EDITION</p>
+    <div class="boot-load"><i></i></div>
+  </div>
+</div>
+<div class="app">
+<header class="topbar">
+<div class="brand"><div class="logo">GRIDLINE <span>EMPIRE</span><small>CLEANER ENERGY • A BRIGHTER TOMORROW</small></div><div id="rank" class="rank">GRID ROOKIE</div></div>
+<div class="stats">
+<div class="stat cash"><small>CASH</small><b id="cash">$0</b></div>
+<div class="stat power"><small>STORED POWER</small><b id="power">0 kWh</b></div>
+<div class="stat"><small>OUTPUT</small><b id="output">0 kW</b></div>
+</div>
+
+<div class="b4-ops-strip">
+  <div><small>⚡ GRID DEMAND</small><b id="b4Grid">GRID ONLINE</b></div>
+  <div><small>☁ WEATHER</small><b id="b4Weather">CLEAR</b></div>
+  <div><small>● CONDITIONS</small><b id="b4Condition">OPTIMAL</b></div>
+  <div><small>◷ LOCAL TIME</small><b id="b4Clock">--:--</b></div>
+</div>
+<div id="marketTicker"><span id="tickerText">⚡ Riverbend Power Market initializing...</span></div>
+
+</header>
+<main class="content">
+<section id="home" class="page active">
+<div class="hero">
+<div class="sky"><div class="sunmoon"></div></div>
+<div class="hills"></div>
+<div class="scene-label"><small>YOUR PLANT</small><h2>RIVERBEND</h2><h3>POWER STATION</h3><p id="sceneSub">Reliable energy for a brighter tomorrow.</p></div>
+<div class="statusstrip"><div id="gridStatus" class="pill grid">● GRID ONLINE</div><div id="weather" class="pill">☀ CLEAR</div></div>
+
+
+  <div id="cpSteam" class="cp-stage"><i>🌀</i>STEAM</div>
+  <div id="cpGas" class="cp-stage"><i>🔥</i>GAS</div>
+  <div id="cpSolar" class="cp-stage"><i>☀️</i>SOLAR</div>
+  <div id="cpNuclear" class="cp-stage"><i>☢️</i>NUCLEAR</div>
+</div>
+
+<div id="stageArtLabel" class="stage-art-label">RIVERBEND GENERATION SITE</div>
+<div id="tutorialFinal" class="tutorial-overlay-final">
+  <div class="tutorial-avatar">👷‍♂️</div>
+  <div class="tutorial-card-final">
+    <small id="tutorialFinalStep">TUTORIAL 1/7</small>
+    <h3 id="tutorialFinalTitle">Welcome to Gridline Empire</h3>
+    <p id="tutorialFinalText">Generate power to begin operating Riverbend Station.</p>
+    <div class="tutorial-actions">
+      <button id="tutorialFinalNext" onclick="nextFinalTutorial()">NEXT ➜</button>
+      <button class="secondary" onclick="skipFinalTutorial()">SKIP</button>
+    </div>
+  </div>
+</div>
+<div class="cp-plant-status">
+  <h4 id="cpOnline">● PLANT ONLINE</h4>
+  <div class="r"><span>Efficiency</span><b id="cpEff">100%</b></div>
+  <div class="r"><span>Reliability</span><b id="cpRel">100%</b></div>
+  <div class="r"><span>Output</span><b id="cpOut">0/s</b></div>
+  <div class="r"><span>Demand</span><b id="cpDemand">100%</b></div>
+</div>
+<!-- PPT HOME ACTION ORDER V3 --><div class="generate-wrap">
+  <button class="generate" onclick="tapGenerate()">⚡ GENERATE POWER</button>
+  <!-- PPT SELL POSITION V4 --><button id="sellBtn" class="btn green" onclick="sellPower()">💵 Sell All Power</button><button id="autoGenerateBtn" class="auto-generate-btn" onclick="toggleAutoGenerate()">🔒 AUTO GENERATE</button>
+</div><div class="yard">
+<div class="cinematic-fx"><i></i><i></i><i></i></div>
+<div id="viewStageBadge" class="view-stage-badge">LIVE FACILITY</div>
+<div class="cp-stage-rail">
+  <button id="cpDiesel" class="cp-stage" onclick="selectStageView('diesel')" title="View Diesel facility"><i>⛽</i>DIESEL</button>
+
+<svg class="plant-art" viewBox="0 0 760 430" preserveAspectRatio="xMidYMid slice" aria-label="Riverbend power station">
+<defs>
+  <linearGradient id="v10ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d4a4b"/><stop offset="1" stop-color="#182b2f"/></linearGradient>
+  <linearGradient id="v10steel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#445b64"/><stop offset=".45" stop-color="#bcc7ca"/><stop offset=".72" stop-color="#687c84"/><stop offset="1" stop-color="#30464f"/></linearGradient>
+  <linearGradient id="v10darksteel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#263b44"/><stop offset=".55" stop-color="#536b75"/><stop offset="1" stop-color="#1e3037"/></linearGradient>
+  <linearGradient id="v10concrete" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d5dcdd"/><stop offset="1" stop-color="#77878b"/></linearGradient>
+  <linearGradient id="v10yellow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd95a"/><stop offset="1" stop-color="#be8517"/></linearGradient>
+  <filter id="v10shadow"><feDropShadow dx="0" dy="7" stdDeviation="5" flood-color="#000" flood-opacity=".55"/></filter>
+</defs>
+<rect x="0" y="250" width="760" height="180" fill="url(#v10ground)"/>
+<path d="M0 320 H760 V430 H0Z" fill="#202a2d"/>
+<path d="M0 353 H760" stroke="#65767c" stroke-width="5"/>
+<path d="M0 390 H760" stroke="#d8ae2f" stroke-width="4" stroke-dasharray="34 28"/>
+<g opacity=".55"><path d="M0 328 l18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22 18-22 18 22" fill="none" stroke="#748a92" stroke-width="2"/></g>
+
+<g id="dieselStage" class="stage">
+  <g filter="url(#v10shadow)">
+    <rect x="20" y="298" width="76" height="42" rx="3" fill="url(#v10darksteel)" stroke="#9aabb1" stroke-width="2"/>
+    <rect class="window" x="30" y="312" width="15" height="10" fill="#eacb56"/><rect class="window" x="50" y="312" width="15" height="10" fill="#eacb56"/>
+    <text x="29" y="307" fill="#e9f3f7" font-size="7" font-weight="700">SECURITY</text>
+  </g>
+  <g filter="url(#v10shadow)">
+    <rect x="108" y="260" width="145" height="80" rx="3" fill="url(#v10darksteel)" stroke="#9db0b6" stroke-width="2"/>
+    <rect x="118" y="282" width="48" height="31" fill="#14272e" stroke="#74858b"/>
+    <g stroke="#b7c4c8" stroke-width="5"><line x1="123" y1="286" x2="123" y2="309"/><line x1="135" y1="286" x2="135" y2="309"/><line x1="147" y1="286" x2="147" y2="309"/><line x1="159" y1="286" x2="159" y2="309"/></g>
+    <rect x="181" y="279" width="53" height="22" rx="3" fill="#1b3037" stroke="#8da0a7"/><text x="184" y="294" fill="#ffd64e" font-size="8" font-weight="900">DIESEL GEN</text>
+  </g>
+  <g filter="url(#v10shadow)"><ellipse cx="83" cy="274" rx="34" ry="11" fill="#aab6b9"/><rect x="49" y="274" width="68" height="52" fill="url(#v10steel)"/><ellipse cx="83" cy="326" rx="34" ry="11" fill="#586d74"/><path d="M50 294 H116" stroke="#6b7f86" stroke-width="3"/></g>
+  <g filter="url(#v10shadow)"><rect x="270" y="288" width="70" height="52" rx="2" fill="#30474f" stroke="#8da0a8" stroke-width="2"/><g fill="#aebdc2"><rect x="279" y="270" width="8" height="23"/><rect x="298" y="270" width="8" height="23"/><rect x="317" y="270" width="8" height="23"/></g></g>
+</g>
+
+<g id="steamStage" class="stage">
+  <g filter="url(#v10shadow)">
+    <rect x="265" y="177" width="282" height="163" rx="3" fill="url(#v10steel)" stroke="#a6b6bb" stroke-width="2"/>
+    <rect x="292" y="154" width="230" height="24" fill="#344b54" stroke="#81949b" stroke-width="2"/>
+    <rect x="284" y="208" width="246" height="23" fill="#20363e" stroke="#6f8289"/>
+    <g fill="#e7c957" class="glow"><rect class="window" x="293" y="214" width="17" height="11"/><rect class="window" x="318" y="214" width="17" height="11"/><rect class="window" x="343" y="214" width="17" height="11"/><rect class="window" x="368" y="214" width="17" height="11"/><rect class="window" x="393" y="214" width="17" height="11"/><rect class="window" x="418" y="214" width="17" height="11"/><rect class="window" x="443" y="214" width="17" height="11"/><rect class="window" x="468" y="214" width="17" height="11"/><rect class="window" x="493" y="214" width="17" height="11"/></g>
+    <text x="295" y="196" fill="#edf6fa" font-size="11" font-weight="900">STEAM TURBINE HALL</text>
+    <g fill="url(#v10steel)" stroke="#748891"><rect x="310" y="136" width="16" height="18" rx="2"/><rect x="360" y="136" width="16" height="18" rx="2"/><rect x="410" y="136" width="16" height="18" rx="2"/><rect x="460" y="136" width="16" height="18" rx="2"/></g>
+  </g>
+  <g filter="url(#v10shadow)"><rect x="200" y="80" width="45" height="260" fill="#e2e7e8" stroke="#9aa8ad" stroke-width="2"/><rect x="200" y="112" width="45" height="38" fill="#c94838"/><rect x="200" y="192" width="45" height="38" fill="#c94838"/><path d="M194 112 H251 M194 152 H251 M194 192 H251 M194 232 H251" stroke="#263940" stroke-width="4"/><circle class="blink" cx="222" cy="75" r="4" fill="#ff4545"/></g>
+  <g class="steamPuff"><circle cx="220" cy="55" r="31" fill="#e8f0f0" opacity=".48"/><circle cx="245" cy="35" r="39" fill="#e8f0f0" opacity=".34"/><circle cx="205" cy="22" r="33" fill="#e8f0f0" opacity=".27"/></g>
+  <g filter="url(#v10shadow)"><rect x="317" y="258" width="185" height="69" rx="9" fill="#415a64" stroke="#aab9be" stroke-width="2"/><circle cx="355" cy="292" r="27" fill="#1e343c" stroke="#d2dcdf" stroke-width="3"/><g class="fan" stroke="#f3c53d" stroke-width="5"><line x1="355" y1="268" x2="355" y2="316"/><line x1="331" y1="292" x2="379" y2="292"/><line x1="338" y1="275" x2="372" y2="309"/><line x1="372" y1="275" x2="338" y2="309"/></g><rect x="391" y="270" width="94" height="43" rx="5" fill="#263c44" stroke="#748891"/><text x="404" y="295" fill="#dfeaed" font-size="8" font-weight="900">GENERATOR</text></g>
+  <g class="metal"><path d="M110 245 H600" stroke="#d6e0e2" stroke-width="9" stroke-linecap="round"/><path d="M110 259 H600" stroke="#83979f" stroke-width="8" stroke-linecap="round"/><path d="M110 273 H600" stroke="#a9b9be" stroke-width="7" stroke-linecap="round"/><g stroke="#6f858d" stroke-width="4"><line x1="145" y1="235" x2="145" y2="303"/><line x1="230" y1="235" x2="230" y2="303"/><line x1="565" y1="235" x2="565" y2="303"/></g></g>
+</g>
+
+<g id="gasStage" class="stage">
+  <g filter="url(#v10shadow)"><rect x="540" y="225" width="150" height="115" fill="url(#v10darksteel)" stroke="#8da0a7" stroke-width="2"/><text x="555" y="245" fill="#f1f7fa" font-size="10" font-weight="900">GAS TURBINE BLOCK</text><rect x="555" y="265" width="118" height="30" rx="4" fill="#17313a" stroke="#72878f"/></g>
+  <g filter="url(#v10shadow)"><rect x="662" y="124" width="28" height="216" fill="#c7d0d2" stroke="#8b9a9f" stroke-width="2"/><path d="M657 164 H695 M657 205 H695 M657 246 H695" stroke="#31454d" stroke-width="4"/><circle class="blink" cx="676" cy="118" r="4" fill="#ff4a4a"/></g>
+  <g class="steamPuff s2"><circle cx="676" cy="96" r="23" fill="#dfe8e8" opacity=".3"/><circle cx="697" cy="78" r="28" fill="#dfe8e8" opacity=".22"/></g>
+  <g filter="url(#v10shadow)"><ellipse cx="598" cy="208" rx="36" ry="12" fill="#c9d2d4"/><rect x="562" y="208" width="72" height="91" fill="url(#v10steel)"/><ellipse cx="598" cy="299" rx="36" ry="12" fill="#586c73"/></g>
+</g>
+
+<g id="solarStage" class="stage">
+  <g transform="translate(505 275) skewX(-14)" filter="url(#v10shadow)"><g fill="#123f67" stroke="#86a5b6" stroke-width="2"><rect x="0" y="0" width="76" height="34"/><rect x="84" y="0" width="76" height="34"/><rect x="18" y="43" width="76" height="34"/><rect x="102" y="43" width="76" height="34"/></g></g>
+  <g stroke="#7d9299" stroke-width="4" fill="none"><path d="M620 210 V333 M680 210 V333 M735 210 V333"/><path d="M597 235 H755 M597 265 H755"/></g>
+  <g class="pulse" fill="#8edcff"><circle cx="620" cy="235" r="4"/><circle cx="680" cy="265" r="4"/><circle cx="735" cy="235" r="4"/></g>
+</g>
+
+<g id="nuclearStage" class="stage">
+  <g filter="url(#v10shadow)"><path d="M80 340 V230 Q80 160 150 160 Q220 160 220 230 V340Z" fill="url(#v10concrete)" stroke="#9aa8ad" stroke-width="3"/><rect x="104" y="241" width="92" height="62" rx="5" fill="#65777c" stroke="#9aa8ad"/><text x="150" y="282" text-anchor="middle" fill="#ffe04f" font-size="33">☢</text></g>
+  <g filter="url(#v10shadow)"><path d="M235 340 L255 130 L335 130 L355 340Z" fill="url(#v10concrete)" stroke="#9aa8ad" stroke-width="3"/><path d="M345 340 L372 105 L466 105 L493 340Z" fill="url(#v10concrete)" stroke="#9aa8ad" stroke-width="3"/><ellipse cx="295" cy="130" rx="40" ry="8" fill="#475a60"/><ellipse cx="419" cy="105" rx="47" ry="9" fill="#475a60"/></g>
+  <g class="steamPuff s2"><circle cx="294" cy="95" r="32" fill="#edf5f5" opacity=".43"/><circle cx="317" cy="68" r="42" fill="#edf5f5" opacity=".28"/></g>
+  <g class="steamPuff s3"><circle cx="419" cy="65" r="38" fill="#edf5f5" opacity=".45"/><circle cx="447" cy="35" r="49" fill="#edf5f5" opacity=".26"/></g>
+</g>
+
+<g><g stroke="#637981" stroke-width="5"><line x1="48" y1="352" x2="48" y2="265"/><line x1="382" y1="352" x2="382" y2="256"/><line x1="718" y1="352" x2="718" y2="266"/></g><g fill="#ffe484" class="glow"><rect x="38" y="258" width="20" height="7" rx="3"/><rect x="372" y="249" width="20" height="7" rx="3"/><rect x="708" y="259" width="20" height="7" rx="3"/></g><g class="lampGlow" opacity=".15" fill="#ffe997"><path d="M48 265 l-40 88 h80Z"/><path d="M382 256 l-44 97 h88Z"/><path d="M718 266 l-40 87 h80Z"/></g></g>
+<g class="truckmove" filter="url(#v10shadow)"><rect x="5" y="365" width="62" height="27" rx="4" fill="url(#v10yellow)"/><rect x="45" y="350" width="25" height="20" rx="4" fill="#b98218"/><circle cx="18" cy="394" r="8" fill="#111"/><circle cx="55" cy="394" r="8" fill="#111"/></g>
+<g class="alarm" opacity="0"><circle cx="525" cy="169" r="8" fill="#ff4949" class="blink"/></g>
+
+<g id="ultraDetails" pointer-events="none">
+ <g opacity=".32">
+  <path d="M0 344 H760" stroke="#8fdcff" stroke-width="1"/>
+  <path d="M0 348 H760" stroke="#061016" stroke-width="2"/>
+ </g>
+ <g fill="#d9edf4" opacity=".72">
+  <circle cx="116" cy="350" r="2"/><circle cx="145" cy="350" r="2"/><circle cx="613" cy="350" r="2"/><circle cx="642" cy="350" r="2"/>
+ </g>
+ <g opacity=".75" filter="url(#v10shadow)">
+   <rect x="18" y="337" width="104" height="17" rx="3" fill="#071820" stroke="#4b778d"/>
+   <text x="70" y="349" text-anchor="middle" fill="#d6eef7" font-size="7" font-weight="900">RIVERBEND ENERGY</text>
+ </g>
+</g>
+
+</svg>
+<div id="v10StageLabel" class="v10-stage-label">RIVERBEND STARTER SITE</div>
+<div class="premium-art-badge">PREMIUM FACILITY ART</div>
+
+</div>
+
+</div>
+
+<div id="b10CommandDeck" class="b10-command-deck">
+  <div class="b10-deck-head"><div><small>RIVERBEND CONTROL ROOM</small><strong>LIVE GRID PULSE</strong></div><span id="b10AlertState">NORMAL</span></div>
+  <div class="b10-pulse-grid">
+    <div class="b10-pulse"><small>GRID LOAD</small><strong id="b10GridLoad">100%</strong><div class="b10-meter"><i id="b10GridLoadBar"></i></div></div>
+    <div class="b10-pulse"><small>RESERVE MARGIN</small><strong id="b10ReserveMargin">25%</strong><div class="b10-meter"><i id="b10ReserveBar"></i></div></div>
+    <div class="b10-pulse"><small>FLEET HEALTH</small><strong id="b10FleetHealth">100%</strong><div class="b10-meter"><i id="b10HealthBar"></i></div></div>
+    <div class="b10-pulse"><small>SPOT MARKET</small><strong id="b10MarketPrice">$1.00×</strong><div class="b10-market-trend" id="b10MarketSignal">STABLE</div></div>
+  </div>
+</div>
+<div class="cp-equipment">
+  <div class="cp-equip"><strong>🔥 FUEL SYSTEM</strong><small id="cpFuelText">Ready</small><div class="bar"><i id="cpFuelBar" style="width:85%"></i></div></div>
+  <div class="cp-equip"><strong>🌀 TURBINE</strong><small id="cpTurbineText">Online</small><div class="bar"><i id="cpTurbineBar" style="width:92%"></i></div></div>
+  <div class="cp-equip"><strong>⚙️ GENERATOR</strong><small id="cpGeneratorText">Online</small><div class="bar"><i id="cpGeneratorBar" style="width:96%"></i></div></div>
+  <div class="cp-equip"><strong>⚡ GRID LINK</strong><small id="cpGridText">Stable</small><div class="bar"><i id="cpGridBar" style="width:98%"></i></div></div>
+</div>
+
+
+<div class="b4-myplants">
+  <div class="b4-myplants-head"><strong>🏭 MY PLANTS</strong><span>FACILITY SELECT</span></div>
+  <div class="b4-plant-cards">
+    <button class="b4-plant-card" data-stage="steam" onclick="selectStageView('steam')"><b>RIVERBEND</b><small>STEAM FACILITY</small></button>
+    <button class="b4-plant-card" data-stage="gas" onclick="selectStageView('gas')"><b>PINE RIDGE</b><small>GAS FACILITY</small></button>
+    <button class="b4-plant-card" data-stage="solar" onclick="selectStageView('solar')"><b>SUNCREST</b><small>SOLAR FACILITY</small></button>
+    <button class="b4-plant-card" data-stage="nuclear" onclick="selectStageView('nuclear')"><b>BLACKRIDGE</b><small>NUCLEAR FACILITY</small></button>
+  </div>
+</div>
+<div id="tutorialBox" class="tutorial">
+  <strong id="tutorialTitle">Welcome to Riverbend</strong>
+  <p id="tutorialText" class="small">Generate power, sell it to the grid, then build your first generator.</p>
+  <button class="btn green" style="width:100%" onclick="tutorialNext()">CONTINUE</button>
+</div>
+
+<div id="eventBox" class="event"><h3 id="eventTitle">⚠ Plant Event</h3><p id="eventText"></p><button id="eventButton" class="btn orange" onclick="resolveEvent()">RESOLVE</button></div>
+<div class="card b10-shift-card"><div class="section-title"><h3>🎛 Operations Shift</h3><span id="b10ShiftBadge">ACTIVE SHIFT</span></div><div id="b10OpsShift"></div></div>
+<div class="card"><div class="section-title"><h3>⚡ Grid Controls</h3><span id="tapInfo">1 kWh/tap</span></div><div class="btnrow"><button class="btn blue" onclick="upgradeTap()">⚙ Upgrade Generator</button></div><p class="small" id="tapCost"></p></div>
+<div class="card"><div class="section-title"><h3>📊 Operations Dashboard</h3><span>LIVE</span></div><div class="dashboard">
+<div class="dash"><small>OPERATOR LEVEL</small><b id="operatorLevel">1</b></div>
+<div class="dash"><small>OPERATOR XP</small><b id="operatorXP">0 / 100</b></div>
+<div class="dash"><small>EFFICIENCY</small><b id="efficiencyValue">100%</b></div>
+<div class="dash"><small>MAINTENANCE</small><b id="maintenanceValue">100%</b></div>
+<div class="dash"><small>FUEL COST</small><b id="fuelCostValue">$0/s</b></div>
+<div class="dash"><small>NET VALUE</small><b id="netValue">$0/s</b></div>
+</div>
+<div class="kpi-row">
+  <div class="kpi"><small>LIFETIME CASH</small><b id="kpiLifetime">$0</b></div>
+  <div class="kpi"><small>CONTRACTS</small><b id="kpiContracts">0</b></div>
+  <div class="kpi"><small>PRESTIGE</small><b id="kpiPrestige">0</b></div>
+</div>
+
+<div class="empire-command-card">
+  <div class="empire-command-top">
+    <div><small>COMPANY TIER</small><strong id="empireTier">LOCAL UTILITY</strong></div>
+    <div class="empire-mult"><small>EMPIRE OUTPUT</small><strong id="empireMultiplier">1.00×</strong></div>
+  </div>
+  <div class="empire-progress"><i id="empireProgressBar"></i></div>
+  <div class="empire-command-foot"><span id="empireNextMilestone">Next milestone: $65M</span><span id="empireLevelLabel">Empire LV 0</span></div>
+</div>
+</div>
+<div class="card"><div class="section-title"><h3>📜 Power Contracts</h3><span>CUSTOMERS</span></div><div id="contractList"></div></div>
+<div class="card"><div class="section-title"><h3>🛠 Maintenance</h3><span id="maintenanceStatus">Healthy</span></div><div class="btnrow"><button class="btn orange" onclick="performMaintenance()">🔧 SERVICE PLANT</button><button class="btn dark" onclick="hireEngineer()">👷 HIRE ENGINEER</button></div><p id="engineerInfo" class="small"></p></div>
+
+<div class="card">
+  <div class="section-title"><h3>📈 Live Power Market</h3><span id="marketTrend">LIVE</span></div>
+  <div class="uf-statbar">
+    <div class="uf-panel"><small>SPOT PRICE</small><div id="spotPrice" class="uf-value uf-gold">$1.00</div></div>
+    <div class="uf-panel"><small>GRID DEMAND</small><div id="gridDemand" class="uf-value">100%</div></div>
+    <div class="uf-panel"><small>REPUTATION</small><div id="reputationValue" class="uf-value uf-cyan">0</div></div>
+    <div class="uf-panel"><small>RELIABILITY</small><div id="reliabilityValue" class="uf-value uf-green">100%</div></div>
+  </div>
+  <div class="final-toolbar">
+    <button id="autoSellBtn" class="btn dark" onclick="toggleAutoSell()">AUTO SELL: OFF</button>
+    <button id="tutorialDispatchBtn" class="btn blue" onclick="dispatchPower()">⚡ DISPATCH TO GRID</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="section-title"><h3>🔋 Grid Battery</h3><span>ENERGY STORAGE</span></div>
+  <div class="uf-grid">
+    <div class="uf-panel">
+      <small>STORED IN BATTERY</small>
+      <div id="batteryStored" class="uf-value uf-cyan">0 kWh</div>
+      <div class="uf-meter"><i id="batteryMeter"></i></div>
+      <p id="batteryCapacityText">Capacity 0 kWh</p>
+    </div>
+    <div class="uf-panel">
+      <small>BATTERY LEVEL</small>
+      <div id="batteryLevel" class="uf-value">LV 0</div>
+      <p>Stores surplus energy and can discharge during high prices.</p>
+    </div>
+  </div>
+  <div class="btnrow" style="margin-top:10px">
+    <button class="btn green" onclick="chargeBattery()">CHARGE BATTERY</button>
+    <button class="btn orange" onclick="dischargeBattery()">SELL BATTERY POWER</button>
+  </div>
+  <button class="btn purple" style="width:100%;margin-top:10px" onclick="upgradeBattery()">UPGRADE BATTERY</button>
+</div>
+
+<div class="card">
+  <div class="section-title"><h3>🏢 Company Management</h3><span>STAFF & POLICY</span></div>
+  <div class="uf-grid">
+    <div class="uf-panel"><small>STAFF</small><div id="staffCount" class="uf-value">0</div><p>Engineers, traders, safety and operations specialists.</p></div>
+    <div class="uf-panel"><small>COMPANY RATING</small><div id="companyRating" class="uf-value uf-gold">C</div><p>Improves with reliability, cash, contracts and reputation.</p></div>
+  </div>
+  <button class="btn blue" style="width:100%;margin-top:10px" onclick="showPage('company',document.querySelector('[data-nav=company]'))">OPEN COMPANY HQ</button>
+</div>
+
+<div class="card"><div class="section-title"><h3>📋 Activity Log</h3><span>LIVE</span></div><div id="activityLog" class="log"></div></div>
+</section>
+<section id="plants" class="page">
+<div class="page-hero empire-hero"><div><small>GENERATION DIVISION</small><h2>Build the Fleet</h2><p>Scale from Riverbend equipment through offshore, advanced nuclear, fusion and orbital generation.</p></div><div class="page-hero-icon">🏭</div></div>
+<div class="card"><div class="section-title"><h3>🏭 Generating Assets</h3><span>BUILD THE COMPLEX</span></div><div id="plantList"></div></div>
+<div class="card automation-core-card"><div class="section-title"><h3>🤖 Automation Core</h3><span>AUTO GENERATE</span></div><div id="automationCore"></div></div>
+<div class="card"><div class="section-title"><h3>⚙ Corporate Upgrades</h3><span>PERMANENT BONUSES</span></div><div id="corporateUpgradeList"></div></div>
+<div class="card prestige-v6"><div class="section-title"><h3>♻ Prestige</h3><span>REBUILD STRONGER</span></div><p id="prestigeInfo"></p><button class="btn purple" style="width:100%" onclick="prestige()">PRESTIGE COMPANY</button></div>
+<div class="card legacy-grid-card"><div class="section-title"><h3>💠 Legacy Grid</h3><span>GRID CREDITS</span></div><div id="legacyGrid"></div></div>
+</section>
+<section id="map" class="page">
+<div class="page-hero grid-hero"><div><small>TRANSMISSION DIVISION</small><h2>Expand the Grid</h2><p>Connect regional markets, then finance massive infrastructure projects.</p></div><div class="page-hero-icon">🗺️</div></div>
+<div class="card"><div class="section-title"><h3>🗺 Power Grid Expansion</h3><span>REGIONAL BONUSES</span></div><div id="regionList" class="mapgrid"></div></div>
+<div class="card mega-project-card"><div class="section-title"><h3>🌐 Mega Grid Projects</h3><span>STRATEGIC INFRASTRUCTURE</span></div><div id="megaProjectList"></div></div>
+</section>
+<section id="goals" class="page">
+<div class="page-hero goals-hero"><div><small>BOARD OBJECTIVES</small><h2>Empire Roadmap</h2><p>$65M is only the beginning. Progression now extends through decillions, Grid Credits, prestige milestones and repeatable Empire Levels.</p></div><div class="page-hero-icon">🏆</div></div>
+<div class="card phase-card"><div class="section-title"><h3>🧭 Strategic Progression</h3><span>MULTI-GATE</span></div><div id="nextPhase"></div></div>
+<div class="card b10-license-card"><div class="section-title"><h3>🪪 Grid Authority License</h3><span>CAREER PROGRESSION</span></div><div id="b10LicenseProgress"></div></div>
+<div class="card"><div class="section-title"><h3>🎯 Missions</h3><span>CASH REWARDS</span></div><div id="missionList"></div></div>
+<div class="card"><div class="section-title"><h3>🏆 Achievements</h3><span>CAREER MILESTONES</span></div><div id="achievementList"></div></div>
+<div class="card endgame empire-roadmap">
+  <div class="section-title"><h3>⚡ Empire Milestones</h3><span>LONG-TERM</span></div>
+  <p class="small">There is no quick finish line. Build the fleet, master assets, complete contracts, fund mega projects and advance from millions through decillions. Prestige, Grid Credits and Empire Levels continue beyond the listed milestones.</p>
+  <div id="endgameList"></div>
+</div>
+<div class="card dynasty-card"><div class="section-title"><h3>👑 Empire Level</h3><span>REPEATABLE</span></div><div id="empireAscension"></div></div>
+</section>
+
+<!-- PPT BUILD 6 HQ COMMAND CENTER -->
+<section id="company" class="page hq6-page">
+<div class="hq6-shell">
+  <div class="hq6-titlebar">
+    <div><small>GRIDLINE EMPIRE</small><h2>HQ <span>COMMAND CENTER</span></h2><p>Global energy. Local impact. Build a stronger grid.</p></div>
+    <div class="hq6-level"><span>COMPANY LEVEL</span><b id="hq6Level">LV 1</b><div class="hq6-xp"><i id="hq6Xp"></i></div></div>
+  </div>
+
+  <div class="hq6-kpis">
+    <div class="hq6-kpi cash"><small>CASH</small><b id="hq6Cash">$0</b></div>
+    <div class="hq6-kpi"><small>STORED POWER</small><b id="hq6Stored">0 kWh</b></div>
+    <div class="hq6-kpi output"><small>CURRENT OUTPUT</small><b id="hq6Output">0/s</b></div>
+    <div class="hq6-kpi"><small>WORKFORCE</small><b id="hq6Staff">0 STAFF</b></div>
+    <div class="hq6-kpi rep"><small>REPUTATION</small><b id="hq6Rep">0</b></div>
+  </div>
+
+  <div class="hq6-hero">
+    <div class="hq6-hero-brand"><small>RIVERBEND ENERGY GROUP</small><strong>HQ <span>ONLINE</span></strong></div>
+    <div class="hq6-gridlive">
+      <div class="row"><span>GRID STABILITY</span><b id="hq6GridStability" class="good">100%</b></div>
+      <div class="row"><span>REGIONAL DEMAND</span><b id="hq6Demand">100%</b></div>
+      <div class="row"><span>PLANTS ONLINE</span><b id="hq6Plants">0 / 5</b></div>
+      <div class="row"><span>LOCAL TIME</span><b id="hq6Time">--:--</b></div>
+    </div>
+    <div class="hq6-hero-bottom">
+      <div class="hq6-hero-stat"><small>COMPANY VALUE</small><b id="hq6CompanyValue">$0</b></div>
+      <div class="hq6-hero-stat"><small>PROJECTED DAILY</small><b id="hq6Daily" class="green">$0</b></div>
+      <div class="hq6-hero-stat"><small>NET VALUE</small><b id="hq6Net">$0/s</b></div>
+      <div class="hq6-hero-stat"><small>R&D PROGRESS</small><b id="hq6ResearchCount">0 TECH LEVELS</b></div>
+    </div>
+  </div>
+
+  <div class="hq6-section-head"><h3>EXECUTIVE DEPARTMENTS</h3><span>Tap a department to manage it</span></div>
+  <div class="hq6-depts">
+    <div class="hq6-dept" data-dept="operations" onclick="openHQ6Department('operations')"><div class="hq6-dept-img" style="background-image:url('assets/hq6_operations.jpg')"></div><div class="hq6-dept-body"><div class="hq6-dept-title"><strong>🎛 OPERATIONS</strong><span id="hq6Lv-operations">LV 1</span></div><p>Dispatch, automation and plant performance.</p><div class="hq6-effect" id="hq6Effect-operations">+0% Plant Production</div><button class="hq6-upgrade" id="hq6Cost-operations" onclick="event.stopPropagation();upgradeHQ6Department('operations')">UPGRADE</button></div></div>
+    <div class="hq6-dept" data-dept="engineering" onclick="openHQ6Department('engineering')"><div class="hq6-dept-img" style="background-image:url('assets/hq6_engineering.jpg')"></div><div class="hq6-dept-body"><div class="hq6-dept-title"><strong>🔧 ENGINEERING</strong><span id="hq6Lv-engineering">LV 1</span></div><p>Reliability, maintenance and technical support.</p><div class="hq6-effect" id="hq6Effect-engineering">-0% Maintenance Cost</div><button class="hq6-upgrade" id="hq6Cost-engineering" onclick="event.stopPropagation();upgradeHQ6Department('engineering')">UPGRADE</button></div></div>
+    <div class="hq6-dept" data-dept="trading" onclick="openHQ6Department('trading')"><div class="hq6-dept-img" style="background-image:url('assets/hq6_trading.jpg')"></div><div class="hq6-dept-body"><div class="hq6-dept-title"><strong>📈 TRADING</strong><span id="hq6Lv-trading">LV 1</span></div><p>Market timing, dispatch and energy revenue.</p><div class="hq6-effect" id="hq6Effect-trading">+0% Power Sale Value</div><button class="hq6-upgrade" id="hq6Cost-trading" onclick="event.stopPropagation();upgradeHQ6Department('trading')">UPGRADE</button></div></div>
+    <div class="hq6-dept" data-dept="hr" onclick="openHQ6Department('hr')"><div class="hq6-dept-img" style="background-image:url('assets/hq6_hr.jpg')"></div><div class="hq6-dept-body"><div class="hq6-dept-title"><strong>👥 HR & TRAINING</strong><span id="hq6Lv-hr">LV 1</span></div><p>Hire specialists and develop the workforce.</p><div class="hq6-effect" id="hq6Effect-hr">-0% Hiring Cost</div><button class="hq6-upgrade" id="hq6Cost-hr" onclick="event.stopPropagation();upgradeHQ6Department('hr')">UPGRADE</button></div></div>
+    <div class="hq6-dept" data-dept="research" onclick="openHQ6Department('research')"><div class="hq6-dept-img" style="background-image:url('assets/hq6_research.jpg')"></div><div class="hq6-dept-body"><div class="hq6-dept-title"><strong>🧪 R&D</strong><span id="hq6Lv-research">LV 1</span></div><p>Unlock automation, storage and advanced controls.</p><div class="hq6-effect" id="hq6Effect-research">-0% Research Cost</div><button class="hq6-upgrade" id="hq6Cost-research" onclick="event.stopPropagation();upgradeHQ6Department('research')">UPGRADE</button></div></div>
+    <div class="hq6-dept" data-dept="finance" onclick="openHQ6Department('finance')"><div class="hq6-dept-img" style="background-image:url('assets/hq6_finance.jpg')"></div><div class="hq6-dept-body"><div class="hq6-dept-title"><strong>🪙 FINANCE</strong><span id="hq6Lv-finance">LV 1</span></div><p>Cash flow, investment discipline and returns.</p><div class="hq6-effect" id="hq6Effect-finance">+0% Finance Sale Bonus</div><button class="hq6-upgrade" id="hq6Cost-finance" onclick="event.stopPropagation();upgradeHQ6Department('finance')">UPGRADE</button></div></div>
+    <div class="hq6-dept" data-dept="grid" onclick="openHQ6Department('grid')"><div class="hq6-dept-img" style="background-image:url('assets/hq6_grid.jpg')"></div><div class="hq6-dept-body"><div class="hq6-dept-title"><strong>⚡ GRID CONTROL</strong><span id="hq6Lv-grid">LV 1</span></div><p>Regional stability, transmission and dispatch.</p><div class="hq6-effect" id="hq6Effect-grid">+0% Grid Output + Sale</div><button class="hq6-upgrade" id="hq6Cost-grid" onclick="event.stopPropagation();upgradeHQ6Department('grid')">UPGRADE</button></div></div>
+  </div>
+
+  <div class="hq6-detail" data-detail="operations"><div class="hq6-detail-head"><h3>🎛 Operations Center</h3><button class="hq6-close" onclick="closeHQ6Details()">CLOSE</button></div><p class="small">Choose how the company dispatches and operates the fleet.</p><div id="policyList" class="uf-grid"></div></div>
+  <div class="hq6-detail" data-detail="engineering"><div class="hq6-detail-head"><h3>🔧 Engineering</h3><button class="hq6-close" onclick="closeHQ6Details()">CLOSE</button></div><div class="hq6-action-grid"><div class="hq6-action"><small>PLANT CONDITION</small><b id="maintenanceStatus">Healthy</b><button class="uf-btn" onclick="performMaintenance()">SERVICE PLANT</button></div><div class="hq6-action"><small>FIELD ENGINEERS</small><b id="engineerInfo">Engineering Support</b><button class="uf-btn" onclick="hireEngineer()">HIRE ENGINEER</button></div></div></div>
+  <div class="hq6-detail" data-detail="trading"><div class="hq6-detail-head"><h3>📈 Trading Floor</h3><button class="hq6-close" onclick="closeHQ6Details()">CLOSE</button></div><div class="hq6-action-grid"><div class="hq6-action"><small>GRID DISPATCH</small><b>Sell at market conditions</b><button class="uf-btn green" onclick="dispatchPower()">DISPATCH POWER</button></div><div class="hq6-action"><small>AUTOMATION</small><b>Market-responsive selling</b><button class="uf-btn" onclick="toggleAutoSell()">TOGGLE AUTO SELL</button></div></div></div>
+  <div class="hq6-detail" data-detail="hr"><div class="hq6-detail-head"><h3>👥 HR & Training</h3><button class="hq6-close" onclick="closeHQ6Details()">CLOSE</button></div><div id="staffList" class="uf-list"></div></div>
+  <div class="hq6-detail" data-detail="research"><div class="hq6-detail-head"><h3>🧪 Research & Development</h3><button class="hq6-close" onclick="closeHQ6Details()">CLOSE</button></div><div id="researchTree" class="uf-research"></div></div>
+  <div class="hq6-detail" data-detail="finance"><div class="hq6-detail-head"><h3>🪙 Finance Office</h3><button class="hq6-close" onclick="closeHQ6Details()">CLOSE</button></div><div class="hq6-action-grid"><div class="hq6-action"><small>AVAILABLE CASH</small><b id="hq6FinanceCash">Linked to company cash</b><p class="small">Finance upgrades improve realized sale value across the company.</p></div><div class="hq6-action"><small>CONTRACT PERFORMANCE</small><b>Revenue Strategy</b><p class="small">Complete contracts and increase reputation to strengthen company value.</p></div></div></div>
+  <div class="hq6-detail" data-detail="grid"><div class="hq6-detail-head"><h3>⚡ Grid Control Network</h3><button class="hq6-close" onclick="closeHQ6Details()">CLOSE</button></div><div class="hq6-action-grid"><div class="hq6-action"><small>REAL-TIME DISPATCH</small><b>Balance stored generation</b><button class="uf-btn green" onclick="dispatchPower()">DISPATCH TO GRID</button></div><div class="hq6-action"><small>REGIONAL NETWORK</small><b>Expand transmission reach</b><button class="uf-btn" onclick="showPage('map',document.querySelector('[data-nav=map]'))">OPEN GRID MAP</button></div></div></div>
+
+  <div class="hq6-goal"><div><small>NEXT COMPANY GOAL</small><strong id="hq6Goal">Expand to 2 Plants</strong></div><b id="hq6GoalArrow">»</b></div>
+</div>
+</section>
+
+<section id="stats" class="page">
+  <div class="uf-banner">
+    <h3>📊 Company Analytics</h3>
+    <p>Lifetime production, earnings, reliability and expansion performance.</p>
+  </div>
+  <div class="card">
+    <div class="section-title"><h3>Company Snapshot</h3><span>LIVE</span></div>
+    <div class="uf-statbar">
+      <div class="uf-panel"><small>LIFETIME ENERGY</small><div id="statsEnergy" class="uf-value">0</div></div>
+      <div class="uf-panel"><small>LIFETIME CASH</small><div id="statsCash" class="uf-value">$0</div></div>
+      <div class="uf-panel"><small>CONTRACTS</small><div id="statsContracts" class="uf-value">0</div></div>
+      <div class="uf-panel"><small>PRESTIGES</small><div id="statsPrestige" class="uf-value">0</div></div>
+    </div>
+  </div>
+  <div class="card empire-stats-card">
+    <div class="section-title"><h3>🌐 Empire Analytics</h3><span>LONG GAME</span></div>
+    <div class="uf-statbar">
+      <div class="uf-panel"><small>COMPANY TIER</small><div id="statsTier" class="uf-value uf-gold">LOCAL</div></div>
+      <div class="uf-panel"><small>MEGA PROJECTS</small><div id="statsProjects" class="uf-value">0</div></div>
+      <div class="uf-panel"><small>EMPIRE LEVEL</small><div id="statsEmpireLevel" class="uf-value uf-cyan">0</div></div>
+      <div class="uf-panel"><small>EMPIRE BONUS</small><div id="statsEmpireBonus" class="uf-value uf-green">+0%</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="section-title"><h3>⚙ Plant Fleet</h3><span>CAPACITY</span></div>
+    <div id="fleetStats" class="uf-list"></div>
+  </div>
+  <div class="card uf-weekly">
+    <div class="section-title"><h3>🗓 Weekly Challenge</h3><span id="weeklyTimer">7 DAYS</span></div>
+    <div id="weeklyChallenge"></div>
+  </div>
+</section>
+
+<!-- PPT BUILD 6 STORE 16 -->
+<section id="store" class="page b6-store-page">
+<div class="b6-store-shell">
+  <div class="b6-store-hero"><div><small>GRIDLINE EMPIRE • EXECUTIVE STORE</small><h2>EXECUTIVE <span>POWER SHOP</span></h2><p>Permanent licenses, HQ cosmetics, optional boosts and company resource packs.</p></div><div class="b6-store-hero-icon">⚡</div></div>
+  <div class="b6-store-status"><div><small>APP STORE</small><b id="storeKitStatus">Connecting to Apple StoreKit…</b></div><button id="restorePurchasesBtn" class="btn dark" onclick="restorePurchases()">RESTORE</button></div>
+
+  <div class="b6-store-head"><h3>⭐ FEATURED EXECUTIVE UPGRADES</h3><span>PERMANENT</span></div>
+  <div class="b6-product-grid">
+    <div class="b6-product founder"><div class="b6-badge">FOUNDER</div><div class="b6-icon">🏆</div><h4>Founder's Energy Bundle</h4><p>Permanent Founder status • +3% output • +3% sale quality • 5% staff & research discount.</p><button id="b6Buy-foundersBundle" class="b6-buy gold" onclick="purchaseB6Product('foundersBundle')">BUY</button></div>
+    <div class="b6-product"><div class="b6-badge">PREMIUM</div><div class="b6-icon">👔</div><h4>Executive License</h4><p>Permanent +8% generation and +5% grid sale quality.</p><button id="executivePurchaseBtn" class="b6-buy purple" onclick="purchaseExecutiveLicense()">BUY</button></div>
+    <div class="b6-product"><div class="b6-badge">AUTOMATION</div><div class="b6-icon">🤖</div><h4>Auto Generate</h4><p>Permanent convenience upgrade that adds an automatic generation pulse every second.</p><button id="autoGeneratePurchaseBtn" class="b6-buy purple" onclick="purchaseAutoGenerate()">BUY</button></div>
+  </div>
+
+  <div class="b6-store-head"><h3>🏢 PERMANENT COMPANY UPGRADES</h3><span>RESTORABLE</span></div>
+  <div class="b6-product-grid">
+    <div class="b6-product"><div class="b6-icon">🚫</div><h4>Remove Ads</h4><p>Permanently removes forced interstitial ads. Rewarded ads stay optional.</p><button id="removeAdsPurchaseBtn" class="b6-buy gold" onclick="purchaseRemoveAds()">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">✨</div><h4>HQ Executive Theme</h4><p>Permanent black-and-gold executive HQ presentation.</p><button id="b6Buy-hqExecutiveTheme" class="b6-buy gold" onclick="purchaseB6Product('hqExecutiveTheme')">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">🌙</div><h4>Offline Operations License</h4><p>Raises base offline efficiency from 25% to 40% and extends the offline window from 8 to 12 hours. Diminishing returns still apply.</p><button id="b6Buy-offlineOperations" class="b6-buy blue" onclick="purchaseB6Product('offlineOperations')">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">💹</div><h4>Auto Sell License</h4><p>Unlocks Auto Sell immediately plus Immediate, High Price, and Reserve modes. Standard High Price Auto Sell can still be earned through Advanced Automation research.</p><button id="b6Buy-autoSellLicense" class="b6-buy green" onclick="purchaseB6Product('autoSellLicense')">BUY</button></div>
+  </div>
+
+  <div class="b6-store-head"><h3>📦 OPERATIONS & EXPANSION PACKS</h3><span>CONSUMABLE</span></div>
+  <div class="b6-product-grid">
+    <div class="b6-product"><div class="b6-icon">⚡</div><h4>Turbo Grid Pack</h4><p>60 minutes of 2× generation.</p><button id="turboGridPurchaseBtn" class="b6-buy blue" onclick="purchaseTurboGridPack()">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">🧰</div><h4>Maintenance Crate</h4><p>Fully repairs the fleet + 15 minutes of 2× output.</p><button id="maintenanceCratePurchaseBtn" class="b6-buy orange" onclick="purchaseMaintenanceCrate()">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">💵</div><h4>Capital Injection</h4><p>Scaled cash injection based on current company value.</p><button id="capitalInjectionPurchaseBtn" class="b6-buy green" onclick="purchaseCapitalInjection()">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">📡</div><h4>Market Intelligence Pack</h4><p>+25% electricity sale value for 30 minutes.</p><button id="b6Buy-marketIntelligence" class="b6-buy cyan" onclick="purchaseB6Product('marketIntelligence')">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">🛠️</div><h4>Emergency Engineering Team</h4><p>Full fleet repair + 60 minutes of heavy wear protection.</p><button id="b6Buy-emergencyEngineering" class="b6-buy orange" onclick="purchaseB6Product('emergencyEngineering')">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">🧪</div><h4>R&amp;D Accelerator</h4><p>50% off your next research upgrade.</p><button id="b6Buy-rdAccelerator" class="b6-buy purple" onclick="purchaseB6Product('rdAccelerator')">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">👥</div><h4>Recruitment Drive</h4><p>50% off your next specialist staff hire.</p><button id="b6Buy-recruitmentDrive" class="b6-buy blue" onclick="purchaseB6Product('recruitmentDrive')">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">🔋</div><h4>Grid Reserve Pack</h4><p>Adds at least 30 minutes of current generation to stored power.</p><button id="b6Buy-gridReserve" class="b6-buy cyan" onclick="purchaseB6Product('gridReserve')">BUY</button></div>
+    <div class="b6-product"><div class="b6-icon">🗺️</div><h4>Regional Expansion Fund</h4><p>Large scaled cash injection + 25 company reputation.</p><button id="b6Buy-regionalExpansion" class="b6-buy green" onclick="purchaseB6Product('regionalExpansion')">BUY</button></div>
+  </div>
+
+  <div class="card daily-streak-card"><div class="section-title"><h3>🎁 7-Day Supply Streak</h3><span>FREE DAILY</span></div><div id="dailyStreakUI"></div><button id="dailyClaimBtn" class="btn green" style="width:100%;margin-top:12px" onclick="dailyReward()">CLAIM DAILY DROP</button></div>
+  <div class="card rewarded-ad-card"><div class="section-title"><h3>🎬 Rewarded Operations</h3><span>OPTIONAL AD</span></div><div class="storeitem ad-reward-item"><div><strong>⚡ Watch Ad • Grid Overdrive</strong><small>Optional rewarded ad • 2× output for 10 minutes</small></div><button id="rewardedAdBtn" class="btn blue" onclick="watchRewardedAd()">WATCH AD</button></div><div id="adStatus" class="storekit-status ad-status">Ad system checking status…</div></div>
+
+<div class="card support-legal-card">
+  <div class="section-title">
+    <h3>Support & Legal</h3>
+    <span>GRIDLINE EMPIRE</span>
+  </div>
+
+  <div class="final-toolbar">
+    <a class="btn dark" href="https://calasco352.github.io/Gridline-Empire/privacy.html">PRIVACY POLICY</a>
+    <a class="btn dark" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">TERMS OF USE</a>
+    <a class="btn dark" href="https://calasco352.github.io/Gridline-Empire/support.html">SUPPORT</a>
+    <a class="btn dark" href="mailto:calascointeractive.dev@gmail.com?subject=Gridline%20Empire%20Ad%20Report">REPORT AN AD</a>
+    <button class="btn blue" onclick="restorePurchases()">RESTORE PURCHASES</button>
+  </div>
+</div>
+
+<div class="card danger-zone"><div class="section-title"><h3>⚠ Progress Controls</h3><span>LOCAL DATA</span></div><div class="storeitem"><div><strong>♻ Reset Progress</strong><small>Erase local progress. Native permanent purchases can be restored.</small></div><button class="btn red" onclick="resetGame()">RESET</button></div></div>
+  <div class="card"><div class="section-title"><h3>⚙ Settings</h3><span>GAME</span></div><div class="settings-grid"><div class="setting"><b>Sound Effects</b><button id="soundToggle" class="toggle" onclick="toggleSetting('sound')">ON</button></div><div class="setting"><b>Haptics</b><button id="hapticsToggle" class="toggle" onclick="toggleSetting('haptics')">ON</button></div><div class="setting premium-setting"><b>Music Volume</b><input id="musicVolume" type="range" min="0" max="100" value="16" oninput="setPremiumVolume('music',this.value)"></div><div class="setting premium-setting"><b>SFX Volume</b><input id="sfxVolume" type="range" min="0" max="100" value="22" oninput="setPremiumVolume('sfx',this.value)"></div><div class="setting"><b>Reduced Motion</b><button id="motionToggle" class="toggle" onclick="toggleSetting('reducedMotion')">OFF</button></div><div class="setting"><b>Compact Numbers</b><button id="compactToggle" class="toggle on" onclick="toggleSetting('compact')">ON</button></div></div><div class="final-toolbar"><button class="btn blue" onclick="restartFirstShift6()">🎓 REPLAY FIRST SHIFT</button></div></div>
+</div>
+</section>
+
+</main></div>
+<nav class="nav" style="grid-template-columns:repeat(7,1fr)">
+<button class="active" data-nav="home" onclick="showPage('home',this)"><i>🏠</i>HOME</button>
+<button data-nav="plants" onclick="showPage('plants',this)"><i>🏭</i>PLANTS</button>
+<button data-nav="map" onclick="showPage('map',this)"><i>🗺️</i>MAP</button>
+<button data-nav="goals" onclick="showPage('goals',this)"><i>🎯</i>GOALS</button>
+<button data-nav="company" onclick="showPage('company',this)"><i>🏢</i>HQ</button>
+<button data-nav="stats" onclick="showPage('stats',this)"><i>📊</i>STATS</button>
+<button data-nav="store" onclick="showPage('store',this)"><i>🛒</i>STORE</button>
+</nav>
+<div id="toast" class="toast"></div>
+
+<div id="tutorialMask2" class="tut-mask"></div>
+<div id="tutorialPanel2" class="tut-panel">
+  <div class="tut-head">
+    <small id="tutorialCount2">TUTORIAL 1/7</small>
+    <button class="btn dark" style="min-height:auto;padding:6px 9px" onclick="skipGuidedTutorial()">SKIP</button>
+  </div>
+  <h3 id="tutorialTitle2">Welcome to Riverbend</h3>
+  <p id="tutorialText2">Generate your first electricity.</p>
+  <div id="tutorialObjective2" class="b10-tutorial-objective">OBJECTIVE • Generate power</div>
+  <div class="tut-progress"><i id="tutorialProgress2" style="width:14%"></i></div>
+  <div class="tut-actions">
+    <button class="secondary" onclick="prevGuidedTutorial()">BACK</button>
+    <button id="tutorialNext2" onclick="nextGuidedTutorial()">NEXT ➜</button>
+  </div>
+</div>
+
+
+<div id="confirmModal" class="modal">
+  <div class="modalbox">
+    <h2 id="confirmTitle">Confirm</h2>
+    <p id="confirmText"></p>
+    <div class="btnrow">
+      <button class="btn red" id="confirmYes">CONFIRM</button>
+      <button class="btn dark" onclick="closeConfirm()">CANCEL</button>
+    </div>
+  </div>
+</div>
+<div id="finalModal" class="modal">
+  <div class="modalbox">
+    <h2>🏆 Empire Tier Achieved</h2>
+    <p>You cleared the current roadmap tier. The company keeps growing from here.</p>
+    <div class="bigmoney">KEEP BUILDING</div>
+    <p class="small">New regions, mega projects, Empire Levels and repeatable progression continue far beyond this milestone.</p>
+    <button class="btn purple" style="width:100%" onclick="document.getElementById('finalModal').classList.remove('show')">KEEP BUILDING</button>
+  </div>
+</div>
+
+<div id="offlineModal" class="modal"><div class="modalbox"><h2>⚡ Welcome Back</h2><p>Your power plants kept operating while you were away.</p><div id="offlineAmount" class="bigmoney">0 kWh</div><p id="offlineText"></p><button class="btn green" style="width:100%" onclick="closeOffline()">COLLECT</button></div></div>
+<script src="js/game.js?v=28.2"></script>
+<script src="js/build4-ui.js"></script><script src="js/generate-audio-v1.js"></script><script src="js/build6-hq.js"></script>
+<script src="js/build6-store.js"></script>
+<script src="js/build6-final.js"></script>
+<script src="js/build6-economy-v5.js"></script>
+<script src="js/build7-simplified.js"></script>
+<script src="js/build8-rc4.js?v=1"></script>
+<script src="js/build13-iap-release.js?v=13"></script>
+<script src="js/build13-vip-rankings.js?v=30.1"></script>
+  <script src="js/build25-expansion.js?v=28.2"></script>
+  <script src="js/build25-eventrun-v2.js?v=28.2"></script>
+  <script src="js/build25-operating-modes.js?v=25.1"></script>
+  <script src="js/build25-grid-reactions.js?v=25.1"></script>
+  <script src="js/build25-grid-incidents.js?v=25.1"></script>
+  <script src="js/build25-cinematic-plant.js?v=25.1"></script>
+  <script src="js/build25-ad-triggers.js?v=25.1"></script>
+</body>
+</html>

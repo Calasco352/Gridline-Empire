@@ -1,0 +1,602 @@
+/* =========================================================
+   GRIDLINE EMPIRE
+   CINEMATIC PLANT VISUALS V2
+   ========================================================= */
+
+.ge25-cinematic-host{
+    position:relative !important;
+    overflow:hidden !important;
+    isolation:isolate;
+}
+
+.ge25-cinematic-host .plant-art{
+    position:relative;
+    z-index:1;
+}
+
+.ge25-cinematic-stage{
+    position:absolute;
+    inset:0;
+    z-index:3;
+    overflow:hidden;
+    pointer-events:none;
+    border-radius:inherit;
+}
+
+
+/* ---------------------------------------------------------
+   AMBIENT POWER FLOW
+   --------------------------------------------------------- */
+
+.ge25-power-sweep{
+    position:absolute;
+    left:-45%;
+    top:0;
+    width:38%;
+    height:100%;
+
+    background:
+      linear-gradient(
+       105deg,
+       transparent 0%,
+       rgba(115,225,255,.03) 25%,
+       rgba(115,225,255,.25) 50%,
+       rgba(115,225,255,.03) 75%,
+       transparent 100%
+      );
+
+    filter:blur(3px);
+
+    animation:
+      ge25PowerSweep 5s linear infinite;
+}
+
+
+/* ---------------------------------------------------------
+   GRID ENERGY LINES
+   --------------------------------------------------------- */
+
+.ge25-grid-lines{
+    position:absolute;
+    inset:0;
+}
+
+.ge25-grid-lines i{
+    position:absolute;
+    height:1px;
+
+    background:
+      linear-gradient(
+       90deg,
+       transparent,
+       rgba(90,225,255,.82),
+       transparent
+      );
+
+    opacity:.25;
+}
+
+.ge25-grid-lines i:nth-child(1){
+    width:52%;
+    left:-25%;
+    top:35%;
+    animation:
+      ge25GridTravel 3.2s linear infinite;
+}
+
+.ge25-grid-lines i:nth-child(2){
+    width:42%;
+    left:-35%;
+    top:56%;
+    animation:
+      ge25GridTravel 4.1s linear infinite .7s;
+}
+
+.ge25-grid-lines i:nth-child(3){
+    width:65%;
+    left:-55%;
+    top:72%;
+    animation:
+      ge25GridTravel 3.7s linear infinite 1.4s;
+}
+
+
+/* ---------------------------------------------------------
+   REFLECTED LIGHT
+   --------------------------------------------------------- */
+
+.ge25-light-pass{
+    position:absolute;
+    inset:-15%;
+
+    background:
+      radial-gradient(
+       ellipse at 30% 45%,
+       rgba(120,225,255,.14),
+       transparent 35%
+      );
+
+    animation:
+      ge25LightDrift 5.5s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   ENERGY CORE
+   --------------------------------------------------------- */
+
+.ge25-energy-core{
+    position:absolute;
+    left:50%;
+    bottom:15%;
+
+    width:130px;
+    height:44px;
+
+    transform:translateX(-50%);
+
+    background:
+      radial-gradient(
+       ellipse,
+       rgba(80,230,255,.20),
+       rgba(80,230,255,.04) 50%,
+       transparent 72%
+      );
+
+    filter:blur(8px);
+
+    animation:
+      ge25CorePulse 2.4s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   STEAM / HEAT
+   --------------------------------------------------------- */
+
+.ge25-steam-field i{
+    position:absolute;
+    bottom:28%;
+
+    width:14px;
+    height:40px;
+
+    border-radius:50%;
+
+    background:
+      radial-gradient(
+       ellipse,
+       rgba(220,245,255,.20),
+       transparent 68%
+      );
+
+    filter:blur(5px);
+
+    opacity:0;
+
+    animation:
+      ge25Steam 4s ease-out infinite;
+}
+
+.ge25-steam-field i:nth-child(1){
+    left:23%;
+}
+
+.ge25-steam-field i:nth-child(2){
+    left:42%;
+    animation-delay:1s;
+}
+
+.ge25-steam-field i:nth-child(3){
+    left:64%;
+    animation-delay:2s;
+}
+
+.ge25-steam-field i:nth-child(4){
+    left:77%;
+    animation-delay:3s;
+}
+
+
+/* ---------------------------------------------------------
+   SPARKS
+   --------------------------------------------------------- */
+
+.ge25-spark-field i{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+      0 0 7px rgba(110,230,255,.95);
+
+    opacity:0;
+}
+
+.ge25-spark-field i:nth-child(1){
+    left:27%;
+    top:44%;
+}
+
+.ge25-spark-field i:nth-child(2){
+    left:63%;
+    top:53%;
+}
+
+.ge25-spark-field i:nth-child(3){
+    left:78%;
+    top:36%;
+}
+
+
+/* ---------------------------------------------------------
+   OPERATING MODE STATES
+   --------------------------------------------------------- */
+
+.ge25-cinematic-stage.mode-reserve
+.ge25-power-sweep{
+    animation-duration:8s;
+    opacity:.45;
+}
+
+.ge25-cinematic-stage.mode-reserve
+.ge25-energy-core{
+    animation-duration:3.8s;
+    opacity:.55;
+}
+
+
+.ge25-cinematic-stage.mode-balanced
+.ge25-power-sweep{
+    animation-duration:5s;
+}
+
+
+.ge25-cinematic-stage.mode-peak
+.ge25-power-sweep{
+    animation-duration:2.2s;
+    opacity:.9;
+}
+
+.ge25-cinematic-stage.mode-peak
+.ge25-grid-lines i{
+    opacity:.62;
+    animation-duration:1.7s;
+}
+
+.ge25-cinematic-stage.mode-peak
+.ge25-energy-core{
+    animation-duration:.9s;
+    opacity:1;
+}
+
+.ge25-cinematic-stage.mode-peak
+.ge25-light-pass{
+    animation-duration:2.2s;
+}
+
+
+/* ---------------------------------------------------------
+   GENERATE BURST
+   --------------------------------------------------------- */
+
+.ge25-cinematic-stage.generate-burst::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+      radial-gradient(
+       circle at 50% 62%,
+       rgba(170,250,255,.72),
+       rgba(70,220,255,.22) 25%,
+       transparent 57%
+      );
+
+    animation:
+      ge25GenerateFlash .72s ease-out;
+}
+
+.ge25-cinematic-stage.generate-burst
+.ge25-spark-field i{
+    animation:
+      ge25SparkBurst .65s ease-out;
+}
+
+
+/* ---------------------------------------------------------
+   SELL / GRID DISCHARGE
+   --------------------------------------------------------- */
+
+.ge25-cinematic-stage.sell-burst::after{
+    content:"";
+
+    position:absolute;
+    left:-30%;
+    top:35%;
+
+    width:160%;
+    height:3px;
+
+    background:
+      linear-gradient(
+       90deg,
+       transparent,
+       rgba(255,255,255,.95),
+       rgba(90,230,255,.95),
+       transparent
+      );
+
+    box-shadow:
+      0 0 18px rgba(90,230,255,.9);
+
+    animation:
+      ge25SellFlash .85s ease-out;
+}
+
+
+/* ---------------------------------------------------------
+   BREAKDOWN
+   --------------------------------------------------------- */
+
+.ge25-alarm-vignette{
+    position:absolute;
+    inset:0;
+
+    opacity:0;
+
+    background:
+      radial-gradient(
+       ellipse at center,
+       transparent 45%,
+       rgba(255,60,20,.24) 100%
+      );
+}
+
+.ge25-cinematic-stage.plant-breakdown
+.ge25-alarm-vignette{
+    animation:
+      ge25AlarmPulse 1.1s ease-in-out infinite;
+}
+
+.ge25-cinematic-stage.plant-breakdown
+.ge25-grid-lines{
+    opacity:.25;
+}
+
+.ge25-cinematic-stage.plant-breakdown
+.ge25-power-sweep{
+    opacity:.18;
+}
+
+
+/* ---------------------------------------------------------
+   EVENT MESSAGE
+   --------------------------------------------------------- */
+
+.ge25-visual-message{
+    position:absolute;
+    left:50%;
+    bottom:8%;
+
+    transform:
+      translate(-50%,8px)
+      scale(.96);
+
+    padding:5px 9px;
+
+    border:1px solid rgba(120,230,255,.28);
+    border-radius:999px;
+
+    background:rgba(2,15,24,.84);
+
+    font-size:7px;
+    font-weight:900;
+    letter-spacing:.6px;
+
+    opacity:0;
+}
+
+.ge25-visual-message.show{
+    animation:
+      ge25VisualMessage .9s ease-out;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes ge25PowerSweep{
+    from{left:-50%}
+    to{left:115%}
+}
+
+@keyframes ge25GridTravel{
+    from{
+        transform:translateX(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.6;
+    }
+
+    80%{
+        opacity:.35;
+    }
+
+    to{
+        transform:translateX(250%);
+        opacity:0;
+    }
+}
+
+@keyframes ge25LightDrift{
+    0%,100%{
+        transform:translateX(-8%);
+        opacity:.45;
+    }
+
+    50%{
+        transform:translateX(10%);
+        opacity:.85;
+    }
+}
+
+@keyframes ge25CorePulse{
+    0%,100%{
+        transform:
+          translateX(-50%)
+          scale(.86);
+
+        opacity:.45;
+    }
+
+    50%{
+        transform:
+          translateX(-50%)
+          scale(1.18);
+
+        opacity:.95;
+    }
+}
+
+@keyframes ge25Steam{
+    0%{
+        transform:
+          translateY(10px)
+          scale(.65);
+
+        opacity:0;
+    }
+
+    25%{
+        opacity:.28;
+    }
+
+    100%{
+        transform:
+          translateY(-65px)
+          scale(1.55);
+
+        opacity:0;
+    }
+}
+
+@keyframes ge25GenerateFlash{
+    0%{
+        opacity:0;
+        transform:scale(.72);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.3);
+    }
+}
+
+@keyframes ge25SparkBurst{
+    0%{
+        opacity:0;
+        transform:scale(.2);
+    }
+
+    25%{
+        opacity:1;
+        transform:scale(2.2);
+    }
+
+    100%{
+        opacity:0;
+        transform:
+          translateY(-15px)
+          scale(.5);
+    }
+}
+
+@keyframes ge25SellFlash{
+    0%{
+        transform:
+          translateX(-15%)
+          scaleX(.25);
+
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+          translateX(30%)
+          scaleX(1);
+
+        opacity:0;
+    }
+}
+
+@keyframes ge25AlarmPulse{
+    0%,100%{
+        opacity:.15;
+    }
+
+    50%{
+        opacity:.85;
+    }
+}
+
+@keyframes ge25VisualMessage{
+    0%{
+        opacity:0;
+        transform:
+          translate(-50%,8px)
+          scale(.96);
+    }
+
+    18%{
+        opacity:1;
+        transform:
+          translate(-50%,0)
+          scale(1);
+    }
+
+    75%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+          translate(-50%,-5px)
+          scale(.98);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+body.reduced-motion
+.ge25-cinematic-stage *{
+    animation:none !important;
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    .ge25-cinematic-stage *{
+        animation:none !important;
+    }
+}

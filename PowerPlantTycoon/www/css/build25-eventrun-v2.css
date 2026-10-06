@@ -1,0 +1,652 @@
+/* GRIDLINE EMPIRE 1.1 - EVENT RUN V2 */
+
+.ge25v2-hero{
+ padding:17px;
+ border:1px solid rgba(70,207,255,.28);
+ border-radius:18px;
+
+ background:
+  radial-gradient(
+   circle at 85% 5%,
+   rgba(45,108,255,.22),
+   transparent 42%
+  ),
+  linear-gradient(
+   145deg,
+   #061d2a,
+   #07142a
+  );
+}
+
+.ge25v2-kicker,
+.ge25v2-section>small,
+.ge25v2-titleline small,
+.ge25v2-market small,
+.ge25v2-resources small,
+.ge25v2-card small,
+.ge25v2-project>small{
+ font-size:7px;
+ letter-spacing:1.4px;
+ font-weight:950;
+ color:#f4d35e;
+}
+
+.ge25v2-hero h1{
+ margin:7px 0 5px;
+ color:white;
+ font-size:24px;
+ line-height:1.05;
+}
+
+.ge25v2-hero p,
+.ge25v2-section p,
+.ge25v2-card p,
+.ge25v2-project p{
+ color:#8fa7b6;
+ font-size:10px;
+ line-height:1.45;
+}
+
+.ge25v2-heroStats{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:7px;
+ margin-top:13px;
+}
+
+.ge25v2-heroStats>div,
+.ge25v2-resources>div{
+ padding:9px 6px;
+ border:1px solid rgba(73,160,194,.2);
+ border-radius:10px;
+ background:rgba(2,12,22,.7);
+}
+
+.ge25v2-heroStats small,
+.ge25v2-resources small{
+ display:block;
+ font-size:6px;
+ color:#7893a5;
+}
+
+.ge25v2-heroStats b,
+.ge25v2-resources b{
+ display:block;
+ margin-top:3px;
+ color:white;
+ font-size:11px;
+}
+
+
+/* NAV */
+
+.ge25v2-tabs{
+ display:flex;
+ gap:5px;
+ margin-top:10px;
+ padding-bottom:3px;
+ overflow-x:auto;
+}
+
+.ge25v2-tabs button{
+ flex:0 0 auto;
+ min-width:62px;
+ padding:9px 8px;
+ border:1px solid #183849;
+ border-radius:9px;
+ background:#071821;
+ color:#7893a5;
+ font-size:7px;
+ font-weight:950;
+}
+
+.ge25v2-tabs button.active{
+ border-color:#f4d35e;
+ color:#f4d35e;
+ background:rgba(244,211,94,.08);
+}
+
+
+/* GRID EMERGENCY */
+
+.ge25v2-crisis{
+ margin-top:10px;
+ padding:12px;
+ border-radius:14px;
+}
+
+.ge25v2-crisis.waiting{
+ border:1px solid #183849;
+ background:#061720;
+}
+
+.ge25v2-crisis.waiting strong,
+.ge25v2-crisis.waiting span{
+ display:block;
+ margin-top:3px;
+ color:white;
+}
+
+.ge25v2-crisis.active{
+ border:1px solid rgba(255,164,61,.55);
+ background:
+  linear-gradient(
+   145deg,
+   rgba(65,28,5,.82),
+   rgba(20,16,10,.92)
+  );
+ box-shadow:
+  0 0 22px rgba(255,142,35,.12);
+}
+
+.ge25v2-crisis-title{
+ display:flex;
+ gap:9px;
+}
+
+.ge25v2-crisis-title>span{
+ font-size:25px;
+}
+
+.ge25v2-crisis-title small{
+ color:#ffb347;
+ font-size:7px;
+ letter-spacing:1.3px;
+}
+
+.ge25v2-crisis h3{
+ margin:3px 0;
+ color:white;
+ font-size:15px;
+}
+
+.ge25v2-crisis p{
+ margin:0;
+ color:#b8a796;
+ font-size:9px;
+}
+
+.ge25v2-crisis-options{
+ display:grid;
+ gap:6px;
+ margin-top:10px;
+}
+
+.ge25v2-crisis-options button{
+ padding:9px;
+ text-align:left;
+ border:1px solid rgba(255,181,77,.25);
+ border-radius:9px;
+ background:rgba(20,10,2,.5);
+ color:white;
+}
+
+.ge25v2-crisis-options strong,
+.ge25v2-crisis-options small{
+ display:block;
+}
+
+.ge25v2-crisis-options strong{
+ font-size:9px;
+}
+
+.ge25v2-crisis-options small{
+ margin-top:2px;
+ color:#ad9981;
+ font-size:7px;
+}
+
+
+/* OPERATIONS */
+
+.ge25v2-operations,
+.ge25v2-section{
+ margin-top:10px;
+ padding:13px;
+ border:1px solid rgba(72,190,225,.22);
+ border-radius:16px;
+ background:rgba(2,17,26,.93);
+}
+
+.ge25v2-market,
+.ge25v2-titleline{
+ display:flex;
+ align-items:flex-start;
+ justify-content:space-between;
+ gap:10px;
+}
+
+.ge25v2-market>div:last-child{
+ text-align:right;
+}
+
+.ge25v2-market strong{
+ display:block;
+ margin-top:3px;
+ color:#60dfa1;
+ font-size:11px;
+}
+
+.ge25v2-resources{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:6px;
+ margin-top:10px;
+}
+
+.ge25v2-generate,
+.ge25v2-sell{
+ width:100%;
+ margin-top:8px;
+ padding:12px 7px;
+ border:0;
+ border-radius:10px;
+ font-size:11px;
+ font-weight:950;
+}
+
+.ge25v2-generate{
+ color:#111;
+ background:
+  linear-gradient(
+   180deg,
+   #ffda60,
+   #e5ad29
+  );
+}
+
+.ge25v2-sell{
+ color:#fff;
+ background:
+  linear-gradient(
+   180deg,
+   #41d879,
+   #18a552
+  );
+}
+
+
+/* SECTIONS */
+
+.ge25v2-section h2{
+ margin:3px 0 8px;
+ color:white;
+ font-size:16px;
+}
+
+.ge25v2-titleline>b{
+ color:#f4d35e;
+ font-size:10px;
+}
+
+.ge25v2-grid,
+.ge25v2-tasks,
+.ge25v2-rewards{
+ display:grid;
+ gap:8px;
+ margin-top:10px;
+}
+
+
+/* CARDS */
+
+.ge25v2-card,
+.ge25v2-project{
+ padding:11px;
+ border:1px solid #163544;
+ border-radius:12px;
+ background:rgba(2,12,19,.76);
+}
+
+.ge25v2-card.locked{
+ opacity:.67;
+}
+
+.ge25v2-card.done,
+.ge25v2-project.done{
+ border-color:rgba(96,223,161,.4);
+}
+
+.ge25v2-cardhead{
+ display:flex;
+ justify-content:space-between;
+ gap:10px;
+}
+
+.ge25v2-card h3,
+.ge25v2-project h3{
+ margin:3px 0;
+ color:white;
+ font-size:12px;
+}
+
+.ge25v2-cardhead>b{
+ color:#60dfa1;
+ font-size:8px;
+}
+
+.ge25v2-card button,
+.ge25v2-project button{
+ width:100%;
+ margin-top:8px;
+ padding:9px;
+ border:1px solid rgba(244,211,94,.32);
+ border-radius:8px;
+ background:rgba(244,211,94,.07);
+ color:#f4d35e;
+ font-size:8px;
+ font-weight:950;
+}
+
+.ge25v2-card button:disabled,
+.ge25v2-project button:disabled{
+ border-color:#1b303a;
+ background:#0b1b22;
+ color:#60737d;
+}
+
+
+/* METERS */
+
+.ge25v2-meter{
+ grid-column:1/-1;
+ height:5px;
+ margin-top:7px;
+ overflow:hidden;
+ border-radius:999px;
+ background:#06131c;
+}
+
+.ge25v2-meter i{
+ display:block;
+ height:100%;
+ border-radius:inherit;
+
+ background:
+  linear-gradient(
+   90deg,
+   #46d8ff,
+   #60dfa1,
+   #f4d35e
+  );
+}
+
+
+/* TASKS */
+
+.ge25v2-task{
+ display:grid;
+ grid-template-columns:1fr auto;
+ gap:5px;
+ padding:9px;
+ border-left:3px solid #284858;
+ border-radius:9px;
+ background:#06161e;
+}
+
+.ge25v2-task.done{
+ border-left-color:#60dfa1;
+}
+
+.ge25v2-task strong,
+.ge25v2-task small{
+ display:block;
+}
+
+.ge25v2-task strong{
+ color:white;
+ font-size:9px;
+}
+
+.ge25v2-task small{
+ margin-top:2px;
+ color:#7893a5;
+ font-size:7px;
+}
+
+.ge25v2-task>b{
+ color:#f4d35e;
+ font-size:8px;
+}
+
+
+/* PROJECTS */
+
+.ge25v2-projectreq{
+ display:flex;
+ gap:12px;
+ margin:8px 0;
+ color:#91a7b5;
+ font-size:8px;
+}
+
+.ge25v2-rewardline{
+ margin-top:7px;
+ color:#f4d35e;
+ font-size:8px;
+}
+
+
+/* REWARDS */
+
+.ge25v2-reward{
+ display:grid;
+ grid-template-columns:34px 1fr auto;
+ align-items:center;
+ gap:8px;
+ padding:10px;
+ border:1px solid #163544;
+ border-radius:11px;
+ background:#06161e;
+}
+
+.ge25v2-reward.ready{
+ border-color:rgba(244,211,94,.55);
+ box-shadow:
+  0 0 16px rgba(244,211,94,.08);
+}
+
+.ge25v2-reward.claimed{
+ border-color:rgba(96,223,161,.4);
+}
+
+.ge25v2-node{
+ width:32px;
+ height:32px;
+ display:grid;
+ place-items:center;
+ border:1px solid #29556a;
+ border-radius:50%;
+ color:#f4d35e;
+ background:#071923;
+ font-weight:950;
+}
+
+.ge25v2-reward strong,
+.ge25v2-reward span,
+.ge25v2-reward small{
+ display:block;
+}
+
+.ge25v2-reward strong{
+ color:white;
+ font-size:9px;
+}
+
+.ge25v2-reward span{
+ color:#95a9b5;
+ font-size:8px;
+}
+
+.ge25v2-reward small{
+ margin-top:2px;
+ color:#69818f;
+ font-size:7px;
+}
+
+.ge25v2-reward button{
+ padding:8px;
+ border:0;
+ border-radius:7px;
+ background:#f4d35e;
+ color:#111;
+ font-size:7px;
+ font-weight:950;
+}
+
+.ge25v2-reward button:disabled{
+ background:#10232d;
+ color:#607680;
+}
+
+/* BUILD 25 - EVENT HQ NAVIGATION FIX
+   Show all six sections without horizontal scrolling. */
+
+.ge25v2-tabs{
+    display:grid !important;
+    grid-template-columns:repeat(3,1fr) !important;
+    gap:6px !important;
+
+    width:100% !important;
+    margin-top:10px !important;
+    padding-bottom:0 !important;
+
+    overflow:visible !important;
+}
+
+.ge25v2-tabs button{
+    width:100% !important;
+    min-width:0 !important;
+
+    padding:9px 3px !important;
+
+    white-space:nowrap !important;
+
+    font-size:7px !important;
+    letter-spacing:.15px !important;
+}
+
+.ge25v2-tabs button.active{
+    border-color:#f4d35e !important;
+    color:#f4d35e !important;
+    background:rgba(244,211,94,.08) !important;
+}
+
+/* BUILD 25 - EVENT RESOURCE WALLET */
+
+.ge25v2-resourcebar{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+
+    margin-top:8px;
+    padding:8px;
+
+    border:1px solid rgba(72,190,225,.18);
+    border-radius:11px;
+
+    background:rgba(2,14,22,.88);
+}
+
+.ge25v2-resourcebar>div{
+    min-width:0;
+    text-align:center;
+}
+
+.ge25v2-resourcebar small{
+    display:block;
+
+    font-size:6px;
+    letter-spacing:.8px;
+    font-weight:900;
+
+    color:#6f8998;
+}
+
+.ge25v2-resourcebar b{
+    display:block;
+
+    margin-top:3px;
+
+    font-size:10px;
+
+    color:#fff;
+}
+
+.ge25v2-resourcebar>div:nth-child(2) b{
+    color:#65d8ff;
+}
+
+.ge25v2-resourcebar>div:nth-child(3) b{
+    color:#f4d35e;
+}
+
+/* BUILD 25 - EVENT INFORMATION CLEANUP */
+
+.ge25v2-heroStats{
+    grid-template-columns:repeat(2,1fr) !important;
+}
+
+/* Keep the wallet useful without letting it dominate the page. */
+.ge25v2-resourcebar{
+    padding:6px 8px !important;
+    margin-top:7px !important;
+    background:rgba(2,14,22,.65) !important;
+}
+
+.ge25v2-resourcebar b{
+    font-size:9px !important;
+}
+
+
+/* BUILD 25 EVENT RANKINGS FORCE UI */
+
+.ge25-ranking-card{
+    margin-top:10px !important;
+    margin-bottom:8px !important;
+}
+
+.ge25-ranking-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+}
+
+.ge25-ranking-head h2{
+    margin:2px 0 0;
+}
+
+.ge25-ranking-head small,
+.ge25-ranking-score small{
+    display:block;
+    font-size:7px;
+    letter-spacing:.65px;
+    opacity:.65;
+}
+
+.ge25-ranking-score{
+    text-align:right;
+}
+
+.ge25-ranking-score b{
+    display:block;
+    margin-top:2px;
+    font-size:15px;
+}
+
+.ge25-ranking-card p{
+    margin:9px 0 10px;
+    font-size:9px;
+    line-height:1.4;
+    opacity:.76;
+}
+
+.ge25-ranking-button{
+    width:100%;
+    min-height:36px;
+    border-radius:9px;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:.4px;
+}

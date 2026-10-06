@@ -1,0 +1,367 @@
+/* =========================================================
+   GRIDLINE EMPIRE
+   BUILD 25 - VISUAL / MOTION UPGRADE V1
+   ========================================================= */
+
+/* ---------- PLANT AMBIENCE ---------- */
+
+.plant-art{
+    transform-origin:50% 55%;
+    transition:
+      filter .35s ease,
+      opacity .35s ease,
+      transform .35s ease;
+}
+
+/* Reserve = calmer, cooler operation */
+
+body.ge25-visual-reserve .plant-art{
+    animation:
+      ge25PlantReserve 6s ease-in-out infinite;
+}
+
+/* Balanced = subtle living plant */
+
+body.ge25-visual-balanced .plant-art{
+    animation:
+      ge25PlantBalanced 4.2s ease-in-out infinite;
+}
+
+/* Peak Push = noticeably more energetic */
+
+body.ge25-visual-peak .plant-art{
+    animation:
+      ge25PlantPeak 1.65s ease-in-out infinite;
+}
+
+
+/* ---------- GENERATE ---------- */
+
+.plant-art.ge25-plant-generate{
+    animation:
+      ge25PlantGenerate .60s ease-out !important;
+}
+
+#generate.ge25-generate-fired{
+    animation:
+      ge25GenerateButton .42s ease-out !important;
+}
+
+
+/* ---------- SELL ---------- */
+
+.plant-art.ge25-plant-discharge{
+    animation:
+      ge25PlantDischarge .70s ease-out !important;
+}
+
+#sellBtn.ge25-sell-fired{
+    animation:
+      ge25SellButton .52s ease-out !important;
+}
+
+#cash.ge25-cash-impact{
+    animation:
+      ge25CashImpact .70s ease-out !important;
+}
+
+
+/* ---------- CONTROL ROOM RESPONSE ---------- */
+
+#b10CommandDeck{
+    transition:
+      box-shadow .4s ease,
+      filter .4s ease;
+}
+
+#b10CommandDeck.ge25-grid-power-pulse{
+    animation:
+      ge25GridPowerPulse .65s ease-out !important;
+}
+
+#b10CommandDeck.ge25-grid-sale-pulse{
+    animation:
+      ge25GridSalePulse .70s ease-out !important;
+}
+
+
+/* Peak Push makes meters feel more active */
+
+body.ge25-visual-peak
+#b10CommandDeck
+.b10-meter > i,
+
+body.ge25-visual-peak
+#b10CommandDeck
+.bar > i{
+    animation:
+      ge25MeterPeak 1.3s ease-in-out infinite;
+}
+
+
+/* Reserve is intentionally calmer */
+
+body.ge25-visual-reserve
+#b10CommandDeck
+.b10-meter > i,
+
+body.ge25-visual-reserve
+#b10CommandDeck
+.bar > i{
+    animation:
+      ge25MeterReserve 3.5s ease-in-out infinite;
+}
+
+
+/* ---------- BREAKDOWN STATE ---------- */
+
+.plant-art.ge25-plant-breakdown{
+    animation:
+      ge25PlantBreakdown 2.1s ease-in-out infinite !important;
+
+    filter:
+      brightness(.62)
+      saturate(.52)
+      contrast(.94) !important;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes ge25PlantReserve{
+    0%,100%{
+        filter:
+          brightness(.92)
+          saturate(.90);
+    }
+
+    50%{
+        filter:
+          brightness(.98)
+          saturate(.95);
+    }
+}
+
+@keyframes ge25PlantBalanced{
+    0%,100%{
+        filter:
+          brightness(.98)
+          saturate(1);
+    }
+
+    50%{
+        filter:
+          brightness(1.055)
+          saturate(1.06);
+    }
+}
+
+@keyframes ge25PlantPeak{
+    0%,100%{
+        filter:
+          brightness(1.02)
+          saturate(1.06)
+          contrast(1.02);
+    }
+
+    50%{
+        filter:
+          brightness(1.14)
+          saturate(1.16)
+          contrast(1.05);
+    }
+}
+
+@keyframes ge25PlantGenerate{
+    0%{
+        transform:scale(1);
+        filter:brightness(1);
+    }
+
+    35%{
+        transform:scale(1.018);
+        filter:
+          brightness(1.35)
+          saturate(1.18);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes ge25PlantDischarge{
+    0%{
+        transform:scale(1);
+    }
+
+    25%{
+        transform:scale(.992);
+        filter:
+          brightness(1.38)
+          saturate(1.22);
+    }
+
+    55%{
+        transform:scale(1.008);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes ge25GenerateButton{
+    0%{
+        transform:scale(1);
+    }
+
+    35%{
+        transform:scale(.96);
+        filter:brightness(1.45);
+    }
+
+    70%{
+        transform:scale(1.035);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes ge25SellButton{
+    0%{
+        transform:scale(1);
+    }
+
+    32%{
+        transform:scale(.965);
+        filter:brightness(1.45);
+    }
+
+    68%{
+        transform:scale(1.025);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes ge25CashImpact{
+    0%{
+        transform:scale(1);
+    }
+
+    35%{
+        transform:scale(1.09);
+        filter:brightness(1.55);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes ge25GridPowerPulse{
+    0%{
+        filter:brightness(1);
+    }
+
+    38%{
+        filter:brightness(1.20);
+    }
+
+    100%{
+        filter:brightness(1);
+    }
+}
+
+@keyframes ge25GridSalePulse{
+    0%{
+        filter:brightness(1);
+    }
+
+    30%{
+        filter:
+          brightness(1.18)
+          contrast(1.04);
+    }
+
+    100%{
+        filter:brightness(1);
+    }
+}
+
+@keyframes ge25MeterPeak{
+    0%,100%{
+        filter:brightness(1);
+    }
+
+    50%{
+        filter:brightness(1.28);
+    }
+}
+
+@keyframes ge25MeterReserve{
+    0%,100%{
+        filter:brightness(.92);
+    }
+
+    50%{
+        filter:brightness(1.04);
+    }
+}
+
+@keyframes ge25PlantBreakdown{
+    0%,100%{
+        opacity:.82;
+    }
+
+    18%{
+        opacity:.68;
+    }
+
+    23%{
+        opacity:.88;
+    }
+
+    28%{
+        opacity:.70;
+    }
+
+    55%{
+        opacity:.80;
+    }
+}
+
+
+/* ---------- ACCESSIBILITY ---------- */
+
+body.reduced-motion .plant-art,
+body.reduced-motion #generate,
+body.reduced-motion #sellBtn,
+body.reduced-motion #cash,
+body.reduced-motion #b10CommandDeck,
+body.reduced-motion #b10CommandDeck .bar > i,
+body.reduced-motion #b10CommandDeck .b10-meter > i{
+    animation:none !important;
+    transition:none !important;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .plant-art,
+    #generate,
+    #sellBtn,
+    #cash,
+    #b10CommandDeck,
+    #b10CommandDeck .bar > i,
+    #b10CommandDeck .b10-meter > i{
+        animation:none !important;
+        transition:none !important;
+    }
+}

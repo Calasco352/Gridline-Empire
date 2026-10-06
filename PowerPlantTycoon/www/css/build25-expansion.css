@@ -1,0 +1,503 @@
+/* GRIDLINE EMPIRE 1.1 - BUILD 25 VISUAL FOUNDATION */
+
+:root{
+  --ge11-cyan:#5ee4ff;
+  --ge11-gold:#ffd35a;
+  --ge11-green:#63f0aa;
+  --ge11-bg:#06131e;
+  --ge11-panel:#0a1e2b;
+  --ge11-border:rgba(104,219,255,.28);
+}
+
+body.gridline-build25{
+  background:
+    radial-gradient(circle at 50% -20%,rgba(54,188,240,.10),transparent 40%),
+    linear-gradient(180deg,#06131e,#030a10);
+}
+
+body.gridline-build25 button{
+  transition:
+    transform .14s ease,
+    filter .14s ease,
+    box-shadow .14s ease;
+}
+
+body.gridline-build25 button:active{
+  transform:scale(.985);
+}
+
+#ge11EventButton{
+  position:fixed;
+  z-index:9000;
+  right:12px;
+  bottom:92px;
+  width:min(230px,54vw);
+  padding:11px 13px;
+  border:1px solid rgba(255,211,90,.48);
+  border-radius:16px;
+  background:
+    radial-gradient(circle at 90% 0%,rgba(74,216,255,.12),transparent 38%),
+    linear-gradient(135deg,rgba(11,44,64,.98),rgba(20,17,37,.98));
+  color:#fff;
+  text-align:left;
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.46),
+    inset 0 0 24px rgba(63,211,255,.04);
+}
+
+#ge11EventButton small{
+  display:block;
+  color:var(--ge11-gold);
+  font-size:9px;
+  letter-spacing:2px;
+  font-weight:900;
+}
+
+#ge11EventButton strong{
+  display:block;
+  margin-top:4px;
+  font-size:15px;
+  font-weight:950;
+}
+
+#ge11EventButton span{
+  display:block;
+  margin-top:4px;
+  color:#a5c0cf;
+  font-size:10px;
+  font-weight:800;
+}
+
+#ge11EventButton > i{
+  display:block;
+  height:4px;
+  margin-top:8px;
+  overflow:hidden;
+  border-radius:99px;
+  background:rgba(255,255,255,.10);
+}
+
+#ge11EventButton > i > em{
+  display:block;
+  height:100%;
+  border-radius:99px;
+  background:linear-gradient(
+    90deg,
+    var(--ge11-cyan),
+    var(--ge11-green),
+    var(--ge11-gold)
+  );
+  box-shadow:0 0 14px rgba(90,224,255,.6);
+}
+
+#ge11EventOverlay{
+  position:fixed;
+  inset:0;
+  z-index:20000;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  background:rgba(0,6,12,.82);
+  backdrop-filter:blur(10px);
+}
+
+#ge11EventOverlay.open{
+  display:flex;
+}
+
+.ge11-window{
+  position:relative;
+  width:min(760px,100%);
+  max-height:92vh;
+  overflow:auto;
+  padding:18px 16px 34px;
+  border-radius:24px 24px 0 0;
+  border:1px solid var(--ge11-border);
+  background:
+    radial-gradient(circle at 85% 0%,rgba(69,204,255,.12),transparent 34%),
+    radial-gradient(circle at 8% 20%,rgba(255,208,74,.06),transparent 30%),
+    #06131e;
+  color:#fff;
+  box-shadow:0 -22px 65px rgba(0,0,0,.58);
+}
+
+.ge11-close{
+  position:sticky;
+  top:0;
+  float:right;
+  z-index:3;
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  background:#102a3b;
+  color:#fff;
+  font-size:27px;
+}
+
+.ge11-hero{
+  clear:both;
+  padding:20px;
+  border:1px solid rgba(255,211,90,.30);
+  border-radius:20px;
+  background:
+    linear-gradient(135deg,rgba(15,47,67,.96),rgba(24,16,39,.96));
+  box-shadow:
+    inset 0 0 34px rgba(74,218,255,.04),
+    0 10px 32px rgba(0,0,0,.20);
+}
+
+.ge11-kicker{
+  color:var(--ge11-gold);
+  font-size:10px;
+  letter-spacing:2.2px;
+  font-weight:950;
+}
+
+.ge11-hero h1{
+  margin:8px 0 4px;
+  font-size:30px;
+  letter-spacing:-.8px;
+}
+
+.ge11-hero p{
+  margin:6px 0 0;
+  color:#b6cad6;
+  line-height:1.45;
+}
+
+.ge11-eventStats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:17px;
+}
+
+.ge11-eventStats div{
+  padding:12px 9px;
+  border:1px solid rgba(100,220,255,.15);
+  border-radius:13px;
+  background:rgba(0,0,0,.22);
+}
+
+.ge11-eventStats small{
+  display:block;
+  color:#829dab;
+  font-size:8px;
+  font-weight:900;
+}
+
+.ge11-eventStats b{
+  display:block;
+  margin-top:5px;
+  font-size:14px;
+}
+
+.ge11-progress{
+  height:8px;
+  margin-top:16px;
+  overflow:hidden;
+  border-radius:999px;
+  background:rgba(255,255,255,.09);
+}
+
+.ge11-progress i{
+  display:block;
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(
+    90deg,
+    var(--ge11-cyan),
+    var(--ge11-green),
+    var(--ge11-gold)
+  );
+  box-shadow:0 0 16px rgba(76,221,255,.5);
+}
+
+.ge11-section{
+  margin-top:14px;
+  padding:16px;
+  border:1px solid var(--ge11-border);
+  border-radius:18px;
+  background:rgba(7,25,37,.94);
+}
+
+.ge11-section h2{
+  margin:0 0 10px;
+  color:var(--ge11-gold);
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.ge11-reward{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-top:10px;
+  padding:13px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:13px;
+  background:rgba(0,0,0,.18);
+}
+
+.ge11-reward b{
+  display:block;
+}
+
+.ge11-reward span{
+  display:block;
+  margin-top:3px;
+  color:#94afbd;
+  font-size:11px;
+}
+
+.ge11-reward button{
+  min-width:95px;
+  padding:10px;
+  border:0;
+  border-radius:10px;
+  background:linear-gradient(180deg,#f6d85b,#c79117);
+  color:#10151a;
+  font-weight:950;
+}
+
+.ge11-reward button:disabled{
+  background:#172b38;
+  color:#687e8a;
+}
+
+.ge11-reward.ready{
+  border-color:rgba(255,211,90,.52);
+  box-shadow:0 0 20px rgba(255,211,90,.06);
+}
+
+.ge11-muted{
+  color:#98b1bf;
+  line-height:1.5;
+}
+
+@media(max-width:500px){
+  .ge11-eventStats{
+    grid-template-columns:1fr;
+  }
+
+  #ge11EventButton{
+    width:195px;
+  }
+}
+
+
+/* GE11_MORE_EVENTS_TAB */
+
+/* Remove the temporary floating development widget. */
+#ge11EventButton{
+  display:none !important;
+}
+
+#ge11EventsMoreEntry{
+  position:relative;
+  overflow:hidden;
+  border-color:rgba(255,211,90,.36);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255,211,90,.12),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(10,42,60,.98),
+      rgba(18,22,39,.98)
+    );
+}
+
+#ge11EventsMoreEntry::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:linear-gradient(
+    180deg,
+    #ffd35a,
+    #59e0ff
+  );
+}
+
+.ge11-more-icon{
+  font-size:25px;
+  flex:0 0 auto;
+}
+
+.ge11-more-copy{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  text-align:left;
+}
+
+.ge11-more-copy b{
+  color:#fff;
+  font-size:14px;
+  letter-spacing:.5px;
+}
+
+.ge11-more-copy small{
+  margin-top:3px;
+  color:#9db8c7;
+  font-size:10px;
+}
+
+.ge11-more-arrow{
+  color:#ffd35a;
+  font-size:28px;
+  font-weight:700;
+}
+
+
+/* GE11_PERMANENT_EVENTS_NAV_STYLE */
+
+#ge11EventsMoreEntry{
+    display:none !important;
+}
+
+#ge11EventsNav{
+    flex:1 1 0;
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+}
+
+.ge11-bottom-icon{
+    display:block;
+    font-size:19px;
+    line-height:20px;
+}
+
+.ge11-bottom-label{
+    display:block;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:.35px;
+    white-space:nowrap;
+}
+
+#ge11EventsNav:active{
+    transform:scale(.96);
+}
+
+
+/* GE11_SIX_TAB_NAV_FIX */
+
+.ge11-six-nav{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:stretch !important;
+    justify-content:space-between !important;
+    gap:0 !important;
+}
+
+.ge11-six-nav > *{
+    flex:1 1 0 !important;
+    width:0 !important;
+    min-width:0 !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding-left:2px !important;
+    padding-right:2px !important;
+}
+
+.ge11-six-nav button,
+.ge11-six-nav a{
+    font-size:9px !important;
+}
+
+.ge11-six-nav img,
+.ge11-six-nav svg{
+    max-width:22px;
+    max-height:22px;
+}
+
+
+/* BUILD 25 - RIVERBEND HOME HEADER SPACING FIX */
+
+#home > .hero > .scene-label{
+    padding-top:6px !important;
+    overflow:visible !important;
+}
+
+#home > .hero > .scene-label small{
+    display:block !important;
+    line-height:1.4 !important;
+    padding-top:1px !important;
+}
+
+#home > .hero > .scene-label h2{
+    line-height:1.08 !important;
+    margin-top:5px !important;
+    margin-bottom:0 !important;
+}
+
+#home > .hero > .scene-label h3{
+    line-height:1.25 !important;
+    margin-top:3px !important;
+}
+
+/* BUILD 25 - EVENTS SCREEN POSITION FIX */
+
+#ge11EventOverlay{
+    align-items:flex-start !important;
+    justify-content:center !important;
+
+    padding-top:72px !important;
+    padding-bottom:28px !important;
+
+    overflow-y:auto !important;
+}
+
+#ge11EventOverlay .ge11-window{
+    margin:0 auto !important;
+
+    width:min(430px, calc(100% - 20px)) !important;
+
+    max-height:calc(100vh - 110px) !important;
+    overflow-y:auto !important;
+
+    transform:none !important;
+}
+
+/* BUILD 25 - NATIVE GAME UI SELECTION LOCK */
+
+/* Game interface should behave like an app, not a selectable webpage. */
+body,
+body * {
+    -webkit-user-select:none !important;
+    user-select:none !important;
+
+    -webkit-touch-callout:none !important;
+}
+
+/* Prevent images/art from being dragged like browser content. */
+img,
+svg,
+canvas {
+    -webkit-user-drag:none !important;
+    user-drag:none !important;
+}
+
+/* Future player-name/profile fields must remain editable/selectable. */
+input,
+textarea,
+select,
+[contenteditable="true"] {
+    -webkit-user-select:text !important;
+    user-select:text !important;
+
+    -webkit-touch-callout:default !important;
+}

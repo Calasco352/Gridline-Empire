@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-1138328624207381~4467732690</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>We use your device identifier to measure advertising and provide more relevant ads. You can choose whether to allow tracking.</string>
+	<key>CFBundleDisplayName</key>
+	<string>Gridline Empire</string>
+</dict>
+</plist>
